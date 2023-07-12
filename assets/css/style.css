@@ -4,24 +4,64 @@
 
 .modal {
     position: fixed;
+    
     top: 50%;
     left: 50%;
-    border: 1px solid black;
-    border-radius: 10px;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
     z-index: 10;
     background-image: url(../images/letter-background.jpg);
+    background-size: cover;
     width: 450px;
-    height: 200px;
+    height: 400px;
 }
+.modal.active {
+    transform: translate(-50%, -50%) scale(1);
+}
+
 
 .modal-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 20px 20px 180px;
+    padding: 40px 20px 20px 180px;
 }
 
 .modal-header .title {
-    font-size: 20px;
+    font-size: 1.5rem;
     font-weight: bold;
+}
+
+.modal-header .close-btn {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.modal-header .close-btn:hover {
+    color: red;
+}
+
+.modal-content {
+    padding: 20px 20px 20px 50px;
+    font-size: 1.2rem;
+}
+
+#overlay {
+    position: fixed;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(210, 188, 188, 0.6);
+    pointer-events: none;
+
+}
+#overlay.active {
+    opacity: 1;
+    pointer-events: all;
 }
