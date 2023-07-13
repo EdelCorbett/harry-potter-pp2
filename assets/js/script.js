@@ -35,4 +35,5 @@ function closeModal(modal) {
     overlay.classList.remove('active');
 }
 
-console.log("Hello World!");
+console.log('Hello World from script.js');
+

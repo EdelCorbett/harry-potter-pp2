@@ -1,3 +1,4 @@
+/* Google fonts */
 @import url('https://fonts.googleapis.com/css2?family=Henny+Penny&display=swap');
 
 *, *::after, *::before {
@@ -17,7 +18,7 @@ body {
     font-size: 2rem;
     margin: 20px 0;
 }
-
+/* modal style */
 .modal {
     position: fixed;
     
@@ -29,13 +30,14 @@ body {
     background-image: url(../images/letter-background.jpg);
     background-size: cover;
     width: 450px;
-    height: 400px;
+    height: 500px;
 }
+/* modal active style */
 .modal.active {
     transform: translate(-50%, -50%) scale(1);
 }
 
-
+/* modal header style */
 .modal-header {
     display: flex;
     justify-content: space-between;
@@ -47,7 +49,7 @@ body {
     font-size: 1.5rem;
     font-weight: bold;
 }
-
+/* modal close button style */
 .modal-header .close-btn {
     cursor: pointer;
     border: none;
@@ -56,16 +58,16 @@ body {
     font-size: 1.3rem;
     font-weight: bold;
 }
-
+/* close button hover style */
 .modal-header .close-btn:hover {
     color: red;
 }
-
+/* modal content style */
 .modal-content {
     padding: 20px 20px 20px 50px;
     font-size: 1.2rem;
 }
-
+/* overlay style */
 #overlay {
     position: fixed;
     opacity: 0;
