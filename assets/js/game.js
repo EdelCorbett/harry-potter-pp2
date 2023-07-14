@@ -160,7 +160,7 @@ getNewQuestion = () => {
 
     acceptingAnswers = true;
 };
-
+//event listener for the choices
 choices.forEach(choice => { 
     choice.addEventListener("click", e => {
         if(!acceptingAnswers) return;
@@ -168,5 +168,18 @@ choices.forEach(choice => {
         acceptingAnswers = false;
         const selectedChoice = e.target;
         const selectedAnswer = selectedChoice.dataset["number"];
-        console.log(selectedAnswer);
+
+        //check if the answer is correct
+
+        const classToApply = selectedAnswer == currentQuestion.answer ? "correct" : "incorrect";
+        console.log(classToApply);
+
+        selectedChoice.parentElement.classList.add(classToApply);
+
+        setTimeout(() => {
+        selectedChoice.parentElement.classList.remove(classToApply);
+        getNewQuestion();
+        }, 1000);
+    });
+});
 startGame();

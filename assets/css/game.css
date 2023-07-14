@@ -37,7 +37,13 @@ body {
 .choice-text{
     background-color: green;
     padding:1rem;
-    
-    
-    
-}
+    }
+
+    /* correct or incorrect */
+    .correct{
+        background-color: green;
+    }
+
+    .incorrect{
+        background-color: red;
+    }
