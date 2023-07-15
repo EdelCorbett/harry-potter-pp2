@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Harry Potter Quiz">
-    <meta name="keywords " content="harry potter,witches, wisords,goblins, magical, children stories">
+    <meta name="keywords " content="harry potter,witches, wizards,goblins, magical, children stories">
     <meta name="author" content="Edel Corbett">
     <!--favicon-->
     <link rel="icon" href="assets/favicon_io/favicon.ico">
@@ -20,9 +20,29 @@
             <p>lets test your knoweledge</p>
         </div>
     <div class="container">
-        
         <div id="question-container" class="question-container">
+            <!--question display-->
             <div id="question">Question</div>
+            <!--heads up display-->
+            <div id="hud">
+                <div id="hud-item">
+                    <p class="hud-p">
+                        Question
+                    </p>
+                    <h2 class="hud-text" id="questionCounter">
+                        1/10
+                    </h2>
+                </div>
+                <div id="hud-item">
+                    <p class="hud-p">
+                        Score
+                    </p>
+                    <h2 class="hud-text" id="score">
+                        0
+                    </h2>
+                </div>
+            </div>
+           <!--answer choices-->
             <div id="answerbtn" class="answer-btn">
                 <button class="choice-text"  data-number="1">choice 1</button>
                 <button class="choice-text"  data-number="2">choice 2</button>
