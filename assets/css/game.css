@@ -12,7 +12,7 @@ body {
 
 .container{
     background-color: blueviolet;
-    width: 25rem;
+    width: 60rem;
     height: 25rem;
     
 }
@@ -28,22 +28,35 @@ body {
     background-color: yellow;
 }
 .answer-btn{
-    background-color: green;
     display:flex;
     flex-direction: column;
     justify-content: center;
     padding: 2rem;
 }
 .choice-text{
-    background-color: green;
     padding:1rem;
     }
 
     /* correct or incorrect */
-    .correct{
-        background-color: green;
-    }
-
+   .correct{
+       background-color: green;
+   }
     .incorrect{
-        background-color: red;
+         background-color: red;
     }
+    
+/* hud */
+
+#hud{
+    background-color: yellow;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem;
+    height: 5rem;
+    font-size: 1.5rem;
+}
+#hud-item{
+    display: flex;
+    align-items: center;
+}

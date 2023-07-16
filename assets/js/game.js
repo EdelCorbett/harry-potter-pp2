@@ -68,11 +68,11 @@ let questions = [
     },
     {
         question: "Who wrote the Harry Potter books?",
-        choice1: "Hermonie Granger",
-        choice2: "J.K. Rowling",
+        choice1: "Jk Rowling",
+        choice2: "Harry Potter",
         choice3: "Stephen King",
         choice4: "Remus Lupin",
-        selectedAnswer: "2",
+        answer: "1",
     },
     { 
         question: "What is the name of the wizarding bank?",
@@ -138,6 +138,8 @@ startGame = () => {
 
 getNewQuestion = () => {
     if(availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
+        //save the score to local storage
+        localStorage.setItem("mostRecentScore", score);
         //go to the end page
         return window.location.assign("end.html");
     }
@@ -182,15 +184,14 @@ choices.forEach(choice => {
             incrementScore(CORRECT_BONUS);
         }
 
-        selectedChoice.parentElement.classList.add(classToApply);
+        selectedChoice.classList.add(classToApply);
 
         setTimeout(() => {
-        selectedChoice.parentElement.classList.remove(classToApply);
+        selectedChoice.classList.remove(classToApply);
         getNewQuestion();
         }, 1000);
     });
-});
-
+})
 incrementScore = num => {
     score += num;
     scoreText.innerText = score;
