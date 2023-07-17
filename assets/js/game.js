@@ -18,7 +18,7 @@ let questions = [
         choice1: "Polyjuice Potion",
         choice2: "Felix Felicis",
         choice3: "Amortentia",
-        choice4: "Amortentia",
+        choice4: "Person Potion ",
         answer: "1",
     },
     {
