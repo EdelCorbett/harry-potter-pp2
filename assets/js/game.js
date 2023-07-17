@@ -4,10 +4,13 @@ console.log(choices);
 const questionCounterText = document.getElementById('questionCounter');
 const scoreText = document.getElementById('score');
 
-
-
-
 //quiz questions
+let currentQuestion = {};
+let acceptingAnswers = false;
+let score = 0;
+let questionCounter = 0;
+let availableQuestions = [];
+
 
 let questions = [
     {

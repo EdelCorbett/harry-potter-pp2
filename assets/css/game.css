@@ -50,7 +50,7 @@ body {
 #hud{
     background-color: yellow;
     display:flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     padding: 1rem;
     height: 5rem;
