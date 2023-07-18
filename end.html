@@ -18,7 +18,7 @@
             <form>
                 <input type="text" 
                 name="username"id="username" placeholder="Enter your name">
-                <button class="btn"id="saveScore"type="submit"onclick=saveHighScore(event) disabled>Save</button>
+                <button class="btn"id="saveScore"type="submit"onclick="saveHighScore(event)"disabled>Save</button>
             </form>
             <a href="game.html" class="btn">Play Again</a>
             <a href="index.html" class="btn">Go Home</a>
@@ -26,13 +26,18 @@
         </div>
             
     </main>
-    <!--div to display high scores-->
-
+    <!--this is the div that will display the high scores-->
     <div class="high-score-container">
         <h2>High Scores</h2>
-        <ul id="highScoresList"></ul>
-        <button class="btn" onclick="resetHighScores()">Go back</button>
+        <ul id="highScoresList" class="high-score-list"></ul>
+       <!-- <button class="btn">Go Back</button>-->
+       
+    
     </div>
+   
+        
+    </div>
+    
 
     <script src ="assets/js/end.js"></script>
 </body>
