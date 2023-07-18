@@ -200,3 +200,25 @@ incrementScore = num => {
     scoreText.innerText = score;
 };
 startGame();
+
+//timer
+function startTimer(duration, display) {
+    let timer = duration;
+    // Update the timer every second
+    const countdownInterval = setInterval(function () {
+      display.textContent = timer;
+      timer--;
+      // If the timer reaches 0, display a message
+       if (timer < 0) {
+        clearInterval(countdownInterval);
+        display.textContent = ' Game Over!';
+       
+      }
+    }, 1000); // Update the timer by 1 every second
+  }
+  // Start the timer when the window loads
+
+  window.onload = function () {
+    const display = document.getElementById('timer');
+    startTimer(60, display); // 60 seconds timer
+  };
