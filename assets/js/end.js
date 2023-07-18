@@ -34,3 +34,11 @@ highScoresList.innerHTML = highScores.map(score => {
     return `<li class="high-score">${score.name} - ${score.score}</li>`;
 }
 ).join("");
+
+// clear high scores
+function clearHighScores() {
+    localStorage.removeItem("highScores");
+
+    highScores.length = 0;
+    highScoresList.innerHTML = "";
+  }

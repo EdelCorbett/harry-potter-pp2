@@ -12,6 +12,7 @@
     <title>Results</title>
 </head>
 <body>
+    <!--this is where user input name to save score-->
     <main class=" container">
         <div id="result">
             <h1 id="finalScore">0</h1>
@@ -20,19 +21,17 @@
                 name="username"id="username" placeholder="Enter your name">
                 <button class="btn"id="saveScore"type="submit"onclick="saveHighScore(event)"disabled>Save</button>
             </form>
+            <!--buttons to play again or return to home page-->
             <a href="game.html" class="btn">Play Again</a>
             <a href="index.html" class="btn">Go Home</a>
-
         </div>
-            
-    </main>
+     </main>
     <!--this is the div that will display the high scores-->
     <div class="high-score-container">
         <h2>High Scores</h2>
         <ul id="highScoresList" class="high-score-list"></ul>
-       <!-- <button class="btn">Go Back</button>-->
-       
-    
+        <button class="btn" onclick="clearHighScores()">Reset</button>
+
     </div>
    
         
