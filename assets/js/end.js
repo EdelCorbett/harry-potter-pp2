@@ -24,12 +24,16 @@ saveHighScore = e => {
     highScores.sort((a,b) => b.score - a.score);
     highScores.splice(5);
     localStorage.setItem("highScores", JSON.stringify(highScores));
-  // window.location.assign("game.html");
-}
+// hide the result div and show the high score container div
+    const resultDiv = document.getElementById("result");
+    const highScoreContainerDiv = document.querySelector(".high-score-container");
+    resultDiv.style.display = "none";
+    highScoreContainerDiv.style.display = "block";
+};
 
 saveScore.addEventListener("click", saveHighScore);
 
-// high scores list
+// update high scores list by mapping through the high scores array creating a list item 
 highScoresList.innerHTML = highScores.map(score => {
     return `<li class="high-score">${score.name} - ${score.score}</li>`;
 }
