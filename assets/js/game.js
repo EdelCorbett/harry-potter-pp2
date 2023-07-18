@@ -131,6 +131,8 @@ let questions = [
 const CORRECT_BONUS = 1;
 const MAX_QUESTIONS = 10;
 
+//start the game
+
 startGame = () => {
     questionCounter = 0;
     score = 0;
@@ -139,6 +141,8 @@ startGame = () => {
     getNewQuestion();
 };
 
+//get a new question
+
 getNewQuestion = () => {
     if(availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
         //save the score to local storage
@@ -146,6 +150,7 @@ getNewQuestion = () => {
         //go to the end page
         return window.location.assign("end.html");
     }
+    //increment the question counter
     questionCounter++;
     questionCounterText.innerText = `${questionCounter}/${MAX_QUESTIONS}`;
     
@@ -182,33 +187,35 @@ choices.forEach(choice => {
 
         const classToApply = selectedAnswer == currentQuestion.answer ? "correct" : "incorrect";
         console.log(classToApply);
-
-        if(classToApply === "correct") {
-            incrementScore(CORRECT_BONUS);
-        }
-
-        selectedChoice.classList.add(classToApply);
-
+//if the answer is correct, add 1 point to the score
+      if(classToApply === "correct") {
+          incrementScore(CORRECT_BONUS);
+      }
+      selectedChoice.classList.add(classToApply);
+        //set a time out for the next question
         setTimeout(() => {
-        selectedChoice.classList.remove(classToApply);
-        getNewQuestion();
-        }, 1000);
+            selectedChoice.classList.remove(classToApply);
+            getNewQuestion();
+        }, 1000); 
     });
-})
+
+
+}) 
+//increment score
 incrementScore = num => {
     score += num;
     scoreText.innerText = score;
 };
 startGame();
 
-//timer
+//game countdown timer
 function startTimer(duration, display) {
     let timer = duration;
     // Update the timer every second
     const countdownInterval = setInterval(function () {
       display.textContent = timer;
       timer--;
-      // If the timer reaches 0, display a message
+      // If the timer reaches 0, display this  message
        if (timer < 0) {
         clearInterval(countdownInterval);
         display.textContent = ' Game Over!';
