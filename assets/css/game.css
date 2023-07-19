@@ -11,13 +11,12 @@ body {
 
 
 .container{
-    background-color: blueviolet;
+
     width: 35rem;
     height: 25rem;
     
 }
 .question-container{
-    background-color: red;
     text-align: center;
     padding: 2rem;
     height: 5rem;
