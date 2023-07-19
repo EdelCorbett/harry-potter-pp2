@@ -19,13 +19,15 @@ body {
     margin: 20px 0;
 }
 .btn {
-    display:inline-block;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
     padding: 10px 30px;
     border: 2px solid #000;
-    height: 10rem;
-    width: 20rem;
+    height: 5rem;
+    width: 10rem;
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: bold;
     text-decoration: none;
     color: #000;
@@ -35,7 +37,7 @@ body {
 main {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     min-height: 100vh;
     background-color: blue;
@@ -113,10 +115,7 @@ main {
 }
 
 .high-score-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
+   
     min-height: 100vh;
     background-color:yellow;
 }
