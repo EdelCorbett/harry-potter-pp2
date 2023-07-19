@@ -18,6 +18,30 @@ body {
     font-size: 2rem;
     margin: 20px 0;
 }
+.btn {
+    display:inline-block;
+    padding: 10px 30px;
+    border: 2px solid #000;
+    height: 10rem;
+    width: 20rem;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: #000;
+    
+}
+/*
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    min-height: 100vh;
+    background-color: blue;
+
+
+}*/
 /* modal style */
 .modal {
     position: fixed;
@@ -86,4 +110,13 @@ body {
 
 .hidden {
     display: none;
+}
+
+.high-score-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    min-height: 100vh;
+    background-color:yellow;
 }
