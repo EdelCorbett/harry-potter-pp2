@@ -9,6 +9,8 @@ const finalScore = document.getElementById("finalScore");
 const mostRecentScore = localStorage.getItem("mostRecentScore");
 const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
 const highScoresList = document.getElementById("highScoresList");
+const resultDiv = document.getElementById("result");
+const highScoreContainerDiv = document.querySelector(".high-score-container");
 
 //constants
 const CORRECT_BONUS = 1;
@@ -165,6 +167,7 @@ getNewQuestion = () => {
 
     //randomly select a question
     const questionIndex = Math.floor(Math.random() * availableQuestions.length);
+
     currentQuestion = availableQuestions[questionIndex];
     //display the question 
     question.innerText = currentQuestion.question;
@@ -254,11 +257,13 @@ saveHighScore = e => {
     highScores.sort((a, b) => b.score - a.score);
     highScores.splice(5);
     localStorage.setItem("highScores", JSON.stringify(highScores));
-    // hide the result div and show the high score container div
-    const resultDiv = document.getElementById("result");
-    const highScoreContainerDiv = document.querySelector(".high-score-container");
-    resultDiv.style.display = "none";
-    highScoreContainerDiv.style.display = "block";
+
+
+    resultDiv.removeAttribute("hidden");
+    questionContainer.setAttribute("hidden", true);
+    highScoreContainerDiv.setAttribute("hidden", true);
+    questionContainer.setAttribute("hidden", true);
+
 };
 
 saveScore.addEventListener("click", saveHighScore);
