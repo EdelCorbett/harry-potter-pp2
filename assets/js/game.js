@@ -3,17 +3,29 @@ const choices = Array.from(document.getElementsByClassName("choice-text"));
 console.log(choices);
 const questionCounterText = document.getElementById('questionCounter');
 const scoreText = document.getElementById('score');
+const username = document.getElementById("username");
+const saveScore = document.getElementById("saveScore");
+const finalScore = document.getElementById("finalScore");
+const mostRecentScore = localStorage.getItem("mostRecentScore");
+const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
+const highScoresList = document.getElementById("highScoresList");
 
-//quiz questions
+//constants
+const CORRECT_BONUS = 1;
+const MAX_QUESTIONS = 10;
+const MAX_HIGH_SCORES = 5;
+
+// let variables
 let currentQuestion = {};
 let acceptingAnswers = false;
 let score = 0;
 let questionCounter = 0;
 let availableQuestions = [];
+//update the score
+finalScore.innerText = mostRecentScore;
 
 
-let questions = [
-    {
+let questions = [{
         question: "What is the name of the potion that allows the drinker to assume the appearance of another person?",
         choice1: "Polyjuice Potion",
         choice2: "Felix Felicis",
@@ -77,7 +89,7 @@ let questions = [
         choice4: "Remus Lupin",
         answer: "1",
     },
-    { 
+    {
         question: "What is the name of the wizarding bank?",
         choice1: "Azkaban",
         choice2: "Hogwarts",
@@ -86,12 +98,12 @@ let questions = [
         answer: "4",
     },
     {
-        question: "What is the name of the wizarding prison?",  
+        question: "What is the name of the wizarding prison?",
         choice1: "Wommig Willow",
         choice2: "Azkaban",
         choice3: "Hogwarts",
         choice4: "Diagon Alley",
-         answer: "2",
+        answer: "2",
     },
     {
         question: "What is the name of the magical plant that screams when it is uprooted?",
@@ -118,18 +130,15 @@ let questions = [
         answer: "1",
     },
     {
-        question: "What is the name of the wizarding school?",  
+        question: "What is the name of the wizarding school?",
         choice1: "Platform 9 3/4",
-        choice2: "Hogwarts",    
+        choice2: "Hogwarts",
         choice3: "Diagon Alley",
         choice4: "Gringotts",
         answer: "2",
     }
 
 ];
-//constants
-const CORRECT_BONUS = 1;
-const MAX_QUESTIONS = 10;
 
 //start the game
 
@@ -144,7 +153,7 @@ startGame = () => {
 //get a new question
 
 getNewQuestion = () => {
-    if(availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
+    if (availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
         //save the score to local storage
         localStorage.setItem("mostRecentScore", score);
         //go to the end page
@@ -153,7 +162,7 @@ getNewQuestion = () => {
     //increment the question counter
     questionCounter++;
     questionCounterText.innerText = `${questionCounter}/${MAX_QUESTIONS}`;
-    
+
     //randomly select a question
     const questionIndex = Math.floor(Math.random() * availableQuestions.length);
     currentQuestion = availableQuestions[questionIndex];
@@ -166,8 +175,7 @@ getNewQuestion = () => {
     choices.forEach(choice => {
         const number = choice.dataset["number"];
         choice.innerText = currentQuestion["choice" + number];
-    }
-    );
+    });
     //remove the question from the array
     availableQuestions.splice(questionIndex, 1);
     console.log(availableQuestions);
@@ -175,9 +183,9 @@ getNewQuestion = () => {
     acceptingAnswers = true;
 };
 //event listener for the choices
-choices.forEach(choice => { 
+choices.forEach(choice => {
     choice.addEventListener("click", e => {
-        if(!acceptingAnswers) return;
+        if (!acceptingAnswers) return;
 
         acceptingAnswers = false;
         const selectedChoice = e.target;
@@ -187,20 +195,20 @@ choices.forEach(choice => {
 
         const classToApply = selectedAnswer == currentQuestion.answer ? "correct" : "incorrect";
         console.log(classToApply);
-//if the answer is correct, add 1 point to the score
-      if(classToApply === "correct") {
-          incrementScore(CORRECT_BONUS);
-      }
-      selectedChoice.classList.add(classToApply);
+        //if the answer is correct, add 1 point to the score
+        if (classToApply === "correct") {
+            incrementScore(CORRECT_BONUS);
+        }
+        selectedChoice.classList.add(classToApply);
         //set a time out for the next question
         setTimeout(() => {
             selectedChoice.classList.remove(classToApply);
             getNewQuestion();
-        }, 1000); 
+        }, 1000);
     });
 
 
-}) 
+})
 //increment score
 incrementScore = num => {
     score += num;
@@ -213,19 +221,57 @@ function startTimer(duration, display) {
     let timer = duration;
     // Update the timer every second
     const countdownInterval = setInterval(function () {
-      display.textContent = timer;
-      timer--;
-      // If the timer reaches 0, display this  message
-       if (timer < 0) {
-        clearInterval(countdownInterval);
-        display.textContent = ' Game Over!';
-       
-      }
-    }, 1000); // Update the timer by 1 every second
-  }
-  // Start the timer when the window loads
+        display.textContent = timer;
+        timer--;
+        // If the timer reaches 0, display this  message
+        if (timer < 0) {
+            clearInterval(countdownInterval);
+            display.textContent = ' Game Over!';
 
-  window.onload = function () {
+        }
+    }, 1000); // Update the timer by 1 every second
+}
+// Start the timer when the window loads
+
+window.onload = function () {
     const display = document.getElementById('timer');
     startTimer(60, display); // 60 seconds timer
-  };
+};
+
+
+username.addEventListener("keyup", () => {
+    saveScore.disabled = !username.value;
+    console.log(username.value);
+});
+saveHighScore = e => {
+    console.log("clicked the save button!");
+    e.preventDefault();
+    const score = {
+        score: Math.floor(Math.random() * 10),
+        name: username.value
+    };
+    highScores.push(score);
+    highScores.sort((a, b) => b.score - a.score);
+    highScores.splice(5);
+    localStorage.setItem("highScores", JSON.stringify(highScores));
+    // hide the result div and show the high score container div
+    const resultDiv = document.getElementById("result");
+    const highScoreContainerDiv = document.querySelector(".high-score-container");
+    resultDiv.style.display = "none";
+    highScoreContainerDiv.style.display = "block";
+};
+
+saveScore.addEventListener("click", saveHighScore);
+
+// update high scores list by mapping through the high scores array creating a list item 
+highScoresList.innerHTML = highScores.map(score => {
+    return `<li class="high-score">${score.name} - ${score.score}</li>`;
+}).join("");
+
+// clear high scores
+function clearHighScores() {
+    localStorage.removeItem("highScores");
+
+    highScores.length = 0;
+    highScoresList.innerHTML = "";
+}
