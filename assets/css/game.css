@@ -1,3 +1,12 @@
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+
+
 body {
     display:flex;
     justify-content: center;
@@ -37,15 +46,14 @@ body {
     }
 
     /* correct or incorrect */
-   .correct{
-       background-color: green;
-   }
-    .incorrect{
-         background-color: red;
+.correct{
+    background-color: green;
+}
+.incorrect{
+     background-color: red;
     }
     
 /* hud */
-
 #hud{
     background-color: yellow;
     display:flex;

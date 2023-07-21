@@ -1,8 +1,10 @@
 /* Google fonts */
 @import url('https://fonts.googleapis.com/css2?family=Henny+Penny&display=swap');
 
-*, *::after, *::before {
-  box-sizing: border-box;
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
 }
 
 body {
@@ -13,13 +15,15 @@ body {
 
 
 }
+
 .heading {
     text-align: center;
     font-size: 2rem;
     margin: 20px 0;
 }
+
 .btn {
-    display:flex;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 10px 30px;
@@ -31,8 +35,9 @@ body {
     font-weight: bold;
     text-decoration: none;
     color: #000;
-    
+
 }
+
 /*
 main {
     display: flex;
@@ -47,7 +52,7 @@ main {
 /* modal style */
 .modal {
     position: fixed;
-    
+
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(0);
@@ -58,6 +63,7 @@ main {
     width: 450px;
     height: 500px;
 }
+
 /* modal active style */
 .modal.active {
     transform: translate(-50%, -50%) scale(1);
@@ -75,6 +81,7 @@ main {
     font-size: 1.5rem;
     font-weight: bold;
 }
+
 /* modal close button style */
 .modal-header .close-btn {
     cursor: pointer;
@@ -84,15 +91,18 @@ main {
     font-size: 1.3rem;
     font-weight: bold;
 }
+
 /* close button hover style */
 .modal-header .close-btn:hover {
     color: red;
 }
+
 /* modal content style */
 .modal-content {
     padding: 20px 20px 20px 50px;
     font-size: 1.2rem;
 }
+
 /* overlay style */
 #overlay {
     position: fixed;
@@ -105,6 +115,7 @@ main {
     pointer-events: none;
 
 }
+
 #overlay.active {
     opacity: 1;
     pointer-events: all;
@@ -115,7 +126,7 @@ main {
 }
 
 .high-score-container {
-   
+
     min-height: 100vh;
-    background-color:yellow;
+    background-color: yellow;
 }
