@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,52 +14,82 @@
     <title>Harry Potter Quiz</title>
     <title>Game</title>
 </head>
+
 <body>
     <main clasa="game-main">
         <div class="game-header">
             <h1>Harry Potter Quiz</h1>
             <p>lets test your knoweledge</p>
         </div>
-    <div class="container">
-      <!--heads up display-->
-        <div id="hud">
-            <div id="hud-item">
-                <p class="hud-p">
-                    Question :
-                </p>
-                <h2 class="hud-text"id="questionCounter">
-                
-                </h2>
+        <div class="container">
+            <!--heads up display-->
+            <div id="hud">
+                <div id="hud-item">
+                    <p class="hud-p">
+                        Question :
+                    </p>
+                    <h2 class="hud-text" id="questionCounter">
+
+                    </h2>
+                </div>
+                <div class="timer" id="timer">
+                    60
+                </div>
+                <div id="hud-item">
+                    <p class="hud-p">
+                        Score :
+                    </p>
+                    <h2 class="hud-text" id="score">
+                        0
+                    </h2>
+                </div>
             </div>
-            <div class="timer" id="timer">
-                60
+            <div id="question-container" class="question-container">
+                <!--question display-->
+                <div id="question">Question</div>
+
+                <!--answer choices-->
+                <div id="answerbtn" class="answer-btn">
+                    <button class="choice-text" data-number="1">choice 1</button>
+                    <button class="choice-text" data-number="2">choice 2</button>
+                    <button class="choice-text" data-number="3">choice 3</button>
+                    <button class="choice-text" data-number="4">choice 4</button>
+                </div>
+
             </div>
-            <div id="hud-item">
-                <p class="hud-p">
-                    Score : 
-                </p>
-                <h2 class="hud-text"id="score">
-                    0
-                </h2>
+            <!--this is where user input name to save score-->
+            <div class=" results-container">
+                <div id="result">
+                    <h1 id="finalScore">0</h1>
+                    <form>
+                        <input type="text" name="username" id="username" placeholder="Enter your name">
+                        <button class="btn" id="saveScore" type="submit" onclick="saveHighScore(event)"
+                            disabled>Save</button>
+                    </form>
+
+                </div>
             </div>
-        </div>
-        <div id="question-container" class="question-container">
-            <!--question display-->
-            <div id="question">Question</div>
-           
-           
-           <!--answer choices-->
-            <div id="answerbtn" class="answer-btn">
-                <button class="choice-text"  data-number="1">choice 1</button>
-                <button class="choice-text"  data-number="2">choice 2</button>
-                <button class="choice-text"  data-number="3">choice 3</button>
-                <button class="choice-text"  data-number="4">choice 4</button>
+            <!--this is the div that will display the high scores-->
+            <div class="high-score-container" hidden>
+                <div class="high-score-header">
+                    <h2>High Scores</h2>
+                    <ul id="highScoresList" class="high-score-list"></ul>
+                </div>
+                <!--buttons to play again or go home-->
+                <div class="btn-container">
+                    <a href="game.html" class="btn">Play Again</a>
+                    <a href="index.html" class="btn">Go Home</a>
+                    <button class="btn" onclick="clearHighScores()">Reset</button>
+
+                </div>
+
+
             </div>
-            
-    </div>
-</main>
+
+    </main>
 
 
     <script src="assets/js/game.js"></script>
 </body>
+
 </html>
