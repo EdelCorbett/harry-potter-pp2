@@ -2,6 +2,7 @@ const question = document.getElementById("question");
 const choices = Array.from(document.getElementsByClassName("choice-text"));
 console.log(choices);
 const questionCounterText = document.getElementById('questionCounter');
+const questionContainer = document.getElementById('questionContainer');
 const scoreText = document.getElementById('score');
 const username = document.getElementById("username");
 const saveScore = document.getElementById("saveScore");
@@ -16,6 +17,7 @@ const highScoreContainerDiv = document.querySelector(".high-score-container");
 const CORRECT_BONUS = 1;
 const MAX_QUESTIONS = 10;
 const MAX_HIGH_SCORES = 5;
+const totalTime = 60;
 
 // let variables
 let currentQuestion = {};
@@ -23,6 +25,8 @@ let acceptingAnswers = false;
 let score = 0;
 let questionCounter = 0;
 let availableQuestions = [];
+let timerInterval;
+let timeExpiered = false;
 //update the score
 finalScore.innerText = mostRecentScore;
 
@@ -155,10 +159,13 @@ startGame = () => {
 //get a new question
 
 getNewQuestion = () => {
-    if (availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
+    if (availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS || timeExpiered) {
         //save the score to local storage
         localStorage.setItem("mostRecentScore", score);
-
+        questionContainer.setAttribute("hidden", true);
+        resultDiv.removeAttribute("hidden");
+        finalScore.innerText = score;
+        stopTimer();
         return;
     }
     //increment the question counter
@@ -171,9 +178,7 @@ getNewQuestion = () => {
     currentQuestion = availableQuestions[questionIndex];
     //display the question 
     question.innerText = currentQuestion.question;
-
-
-    //display the choices
+    //loop through the choices
 
     choices.forEach(choice => {
         const number = choice.dataset["number"];
@@ -182,14 +187,13 @@ getNewQuestion = () => {
     //remove the question from the array
     availableQuestions.splice(questionIndex, 1);
     console.log(availableQuestions);
-
+    //set the accepting answers to true
     acceptingAnswers = true;
 };
 //event listener for the choices
 choices.forEach(choice => {
     choice.addEventListener("click", e => {
         if (!acceptingAnswers) return;
-
         acceptingAnswers = false;
         const selectedChoice = e.target;
         const selectedAnswer = selectedChoice.dataset["number"];
@@ -202,6 +206,7 @@ choices.forEach(choice => {
         if (classToApply === "correct") {
             incrementScore(CORRECT_BONUS);
         }
+
         selectedChoice.classList.add(classToApply);
         //set a time out for the next question
         setTimeout(() => {
@@ -211,7 +216,7 @@ choices.forEach(choice => {
     });
 
 
-})
+});
 //increment score
 incrementScore = num => {
     score += num;
@@ -227,18 +232,33 @@ function startTimer(duration, display) {
         display.textContent = timer;
         timer--;
         // If the timer reaches 0, display this  message
-        if (timer < 0) {
+        if (timer < 0 || questionCounter >= MAX_QUESTIONS || timeExpiered) {
             clearInterval(countdownInterval);
             display.textContent = ' Game Over!';
+            const correctAnswer = score / CORRECT_BONUS;
+            console.log(correctAnswer);
+            const timeLeft = duration - timer;
+            console.log(timeLeft);
+            const message = `You got ${correctAnswer} correct answers in ${timeLeft} seconds!`;
+            console.log(message);
+            finalScore.innerText = message;
+
+
 
         }
-    }, 1000); // Update the timer by 1 every second
+    }, 1000); // update every second
+    // Return the countdown interval so that it can be used to stop it
+    return countdownInterval;
+}
+
+function stopTimer() {
+    clearInterval(timerInterval);
 }
 // Start the timer when the window loads
 
 window.onload = function () {
     const display = document.getElementById('timer');
-    startTimer(60, display); // 60 seconds timer
+    timerInterval = startTimer(60, display); // 60 seconds timer
 };
 
 
@@ -258,20 +278,19 @@ saveHighScore = e => {
     highScores.splice(5);
     localStorage.setItem("highScores", JSON.stringify(highScores));
 
-
     resultDiv.removeAttribute("hidden");
     questionContainer.setAttribute("hidden", true);
     highScoreContainerDiv.setAttribute("hidden", true);
-    questionContainer.setAttribute("hidden", true);
+
+
+    // update high scores list by mapping through the high scores array creating a list item 
+    highScoresList.innerHTML = highScores.map(score => {
+        return `<li class="high-score">${score.name} - ${score.score}</li>`;
+    }).join("");
 
 };
 
 saveScore.addEventListener("click", saveHighScore);
-
-// update high scores list by mapping through the high scores array creating a list item 
-highScoresList.innerHTML = highScores.map(score => {
-    return `<li class="high-score">${score.name} - ${score.score}</li>`;
-}).join("");
 
 // clear high scores
 function clearHighScores() {
