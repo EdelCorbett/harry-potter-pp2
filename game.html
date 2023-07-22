@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/game.css">
     <title>Harry Potter Quiz</title>
-    <title>Game</title>
 </head>
 
 <body>
@@ -32,8 +31,10 @@
 
                     </h2>
                 </div>
-                <div class="timer" id="timer">
-                    60
+                <div class="timeLeft">
+                    <div class="timer" id="timer">
+                        60
+                    </div>
                 </div>
                 <div id="hud-item">
                     <p class="hud-p">
@@ -44,7 +45,7 @@
                     </h2>
                 </div>
             </div>
-            <div id="question-container" class="question-container">
+            <div id="questionContainer" class="question-container">
                 <!--question display-->
                 <div id="question">Question</div>
 
@@ -58,19 +59,21 @@
 
             </div>
             <!--this is where user input name to save score-->
-            <div class=" results-container" hidden>
-                <div id="result">
-                    <h1 id="finalScore">0</h1>
-                    <form>
-                        <input type="text" name="username" id="username" placeholder="Enter your name">
-                        <button class="btn" id="saveScore" type="submit" onclick="saveHighScore(event)"
-                            disabled>Save</button>
-                    </form>
 
-                </div>
+
+            <div id="result" hidden>
+                <h2>You Scored</h2>
+                <h2 id="finalScore"></h2>
+                <form>
+                    <input type="text" name="username" id="username" placeholder="Enter your name">
+                    <button class="btn" id="saveScore" type="submit" onclick="saveHighScore(event)"
+                        disabled>Save</button>
+                </form>
+
             </div>
+
             <!--this is the div that will display the high scores-->
-            <div class="high-score-container" hidden>
+            <div class="high-score-container" id="highScoreContainer" hidden>
                 <div class="high-score-header">
                     <h2>High Scores</h2>
                     <ul id="highScoresList" class="high-score-list"></ul>

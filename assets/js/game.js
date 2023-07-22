@@ -159,7 +159,7 @@ startGame = () => {
 //get a new question
 
 getNewQuestion = () => {
-    if (availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS || timeExpiered) {
+    if (availableQuestions.length === 0 || questionCounter === MAX_QUESTIONS || timeExpiered) {
         //save the score to local storage
         localStorage.setItem("mostRecentScore", score);
         questionContainer.setAttribute("hidden", true);
@@ -232,7 +232,7 @@ function startTimer(duration, display) {
         display.textContent = timer;
         timer--;
         // If the timer reaches 0, display this  message
-        if (timer < 0 || questionCounter >= MAX_QUESTIONS || timeExpiered) {
+        if (timer <= 0 || questionCounter === MAX_QUESTIONS || timeExpiered) {
             clearInterval(countdownInterval);
             display.textContent = ' Game Over!';
             const correctAnswer = score / CORRECT_BONUS;
@@ -242,6 +242,11 @@ function startTimer(duration, display) {
             const message = `You got ${correctAnswer} correct answers in ${timeLeft} seconds!`;
             console.log(message);
             finalScore.innerText = message;
+
+            questionContainer.setAttribute("hidden", true);
+            resultDiv.removeAttribute("hidden");
+
+            return;
 
 
 
@@ -270,17 +275,18 @@ saveHighScore = e => {
     console.log("clicked the save button!");
     e.preventDefault();
     const score = {
-        score: Math.floor(Math.random() * 10),
+        score: mostRecentScore,
         name: username.value
     };
     highScores.push(score);
     highScores.sort((a, b) => b.score - a.score);
-    highScores.splice(5);
+    highScores.splice(MAX_HIGH_SCORES);
     localStorage.setItem("highScores", JSON.stringify(highScores));
-
-    resultDiv.removeAttribute("hidden");
+    highScoreContainerDiv.removeAttribute("hidden");
     questionContainer.setAttribute("hidden", true);
-    highScoreContainerDiv.setAttribute("hidden", true);
+    resultDiv.setAttribute("hidden", true);
+
+
 
 
     // update high scores list by mapping through the high scores array creating a list item 
