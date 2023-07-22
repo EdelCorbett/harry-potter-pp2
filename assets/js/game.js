@@ -7,11 +7,11 @@ const scoreText = document.getElementById('score');
 const username = document.getElementById("username");
 const saveScore = document.getElementById("saveScore");
 const finalScore = document.getElementById("finalScore");
-const mostRecentScore = localStorage.getItem("mostRecentScore");
+
 const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
 const highScoresList = document.getElementById("highScoresList");
 const resultDiv = document.getElementById("result");
-const highScoreContainerDiv = document.querySelector(".high-score-container");
+const highScoreContainer = document.querySelector(".high-score-container")
 
 //constants
 const CORRECT_BONUS = 1;
@@ -20,6 +20,7 @@ const MAX_HIGH_SCORES = 5;
 const totalTime = 60;
 
 // let variables
+let mostRecentScore = localStorage.getItem("mostRecentScore");
 let currentQuestion = {};
 let acceptingAnswers = false;
 let score = 0;
@@ -151,23 +152,28 @@ let questions = [{
 startGame = () => {
     questionCounter = 0;
     score = 0;
+
     availableQuestions = [...questions];
     console.log(availableQuestions);
     getNewQuestion();
 };
 
 //get a new question
-
 getNewQuestion = () => {
     if (availableQuestions.length === 0 || questionCounter === MAX_QUESTIONS || timeExpiered) {
         //save the score to local storage
-        localStorage.setItem("mostRecentScore", score);
+        mostRecentScore = score;
+        localStorage.setItem("mostRecentScore", mostRecentScore);
         questionContainer.setAttribute("hidden", true);
         resultDiv.removeAttribute("hidden");
         finalScore.innerText = score;
         stopTimer();
         return;
     }
+
+
+
+
     //increment the question counter
     questionCounter++;
     questionCounterText.innerText = `${questionCounter}/${MAX_QUESTIONS}`;
@@ -178,8 +184,8 @@ getNewQuestion = () => {
     currentQuestion = availableQuestions[questionIndex];
     //display the question 
     question.innerText = currentQuestion.question;
-    //loop through the choices
 
+    //loop through the choices
     choices.forEach(choice => {
         const number = choice.dataset["number"];
         choice.innerText = currentQuestion["choice" + number];
@@ -222,7 +228,6 @@ incrementScore = num => {
     score += num;
     scoreText.innerText = score;
 };
-startGame();
 
 //game countdown timer
 function startTimer(duration, display) {
@@ -264,6 +269,8 @@ function stopTimer() {
 window.onload = function () {
     const display = document.getElementById('timer');
     timerInterval = startTimer(60, display); // 60 seconds timer
+    startGame()
+
 };
 
 
@@ -271,18 +278,20 @@ username.addEventListener("keyup", () => {
     saveScore.disabled = !username.value;
     console.log(username.value);
 });
-saveHighScore = e => {
+let saveHighScore = e => {
     console.log("clicked the save button!");
     e.preventDefault();
-    const score = {
+    mostRecentScore = score;
+    localStorage.setItem("mostRecentScore", mostRecentScore)
+    let newScore = {
         score: mostRecentScore,
         name: username.value
     };
-    highScores.push(score);
+    highScores.push(newScore);
     highScores.sort((a, b) => b.score - a.score);
     highScores.splice(MAX_HIGH_SCORES);
     localStorage.setItem("highScores", JSON.stringify(highScores));
-    highScoreContainerDiv.removeAttribute("hidden");
+    highScoreContainer.removeAttribute("hidden")
     questionContainer.setAttribute("hidden", true);
     resultDiv.setAttribute("hidden", true);
 
