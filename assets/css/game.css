@@ -1,4 +1,3 @@
-
 *,
 *::after,
 *::before {
@@ -8,62 +7,74 @@
 
 
 body {
-    display:flex;
+    display: flex;
     justify-content: center;
     align-items: center;
     padding: 10rem;
 }
-.game-header{
+
+.game-header {
     text-align: center;
     margin-top: 2rem;
 }
 
 
-.container{
+.container {
 
     width: 35rem;
     height: 25rem;
-    
+
 }
-.question-container{
+
+.question-container {
     text-align: center;
     padding: 2rem;
     height: 5rem;
     font-size: 1.5rem;
 
 }
-.question{
+
+.question {
     background-color: yellow;
 }
-.answer-btn{
-    display:flex;
+
+.answer-btn {
+    display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 2rem;
 }
-.choice-text{
-    padding:1rem;
-    }
 
-    /* correct or incorrect */
-.correct{
+.choice-text {
+    padding: 1rem;
+}
+
+/* correct or incorrect */
+.correct {
     background-color: green;
 }
-.incorrect{
-     background-color: red;
-    }
-    
+
+.incorrect {
+    background-color: red;
+}
+
 /* hud */
-#hud{
+#hud {
     background-color: yellow;
-    display:flex;
+    display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
     height: 5rem;
     font-size: 1.2rem;
 }
-#hud-item{
+
+#hud-item {
     display: flex;
     align-items: center;
+}
+
+
+.hidden {
+    display: none;
 }
