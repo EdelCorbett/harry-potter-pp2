@@ -8,12 +8,23 @@
 }
 
 body {
+    background-image: url(../images/hermione2.png), url(../images/harry.png), url(../images/hogwarts.png);
+    background-size: 18rem, 16rem, cover;
+    background-repeat: no-repeat;
+    background-position: left center, right center, center bottom;
+    min-height: 100vh;
+    width: 100%;
     font-family: 'Henny Penny', cursive;
-    margin: 0;
+    margin: 7rem;
     padding: 0;
+}
 
-
-
+.main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(72, 78, 116, 0.9);
 }
 
 .heading {
