@@ -31,7 +31,7 @@ let timeExpiered = false;
 //update the score
 finalScore.innerText = mostRecentScore;
 
-
+//questions for quiz
 let questions = [{
         question: "What is the name of the potion that allows the drinker to assume the appearance of another person?",
         choice1: "Polyjuice Potion",
@@ -158,34 +158,34 @@ startGame = () => {
     getNewQuestion();
 };
 
-//get a new question
+/**
+ * Get a new question
+ * check if there are any questions left
+ *  if there are no questions left, or if timmer runs out
+ */
 getNewQuestion = () => {
     if (availableQuestions.length === 0 || questionCounter === MAX_QUESTIONS || timeExpiered) {
         //save the score to local storage
         mostRecentScore = score;
         localStorage.setItem("mostRecentScore", mostRecentScore);
+        //hide the question container and display the result div
         questionContainer.setAttribute("hidden", true);
         resultDiv.removeAttribute("hidden");
+        //display the final score
         finalScore.innerText = score;
         stopTimer();
         return;
     }
-
-
-
-
     //increment the question counter
     questionCounter++;
+    //display the question counter
     questionCounterText.innerText = `${questionCounter}/${MAX_QUESTIONS}`;
-
     //randomly select a question
     const questionIndex = Math.floor(Math.random() * availableQuestions.length);
-
     currentQuestion = availableQuestions[questionIndex];
     //display the question 
     question.innerText = currentQuestion.question;
-
-    //loop through the choices
+     //loop through the choices
     choices.forEach(choice => {
         const number = choice.dataset["number"];
         choice.innerText = currentQuestion["choice" + number];
@@ -203,7 +203,6 @@ choices.forEach(choice => {
         acceptingAnswers = false;
         const selectedChoice = e.target;
         const selectedAnswer = selectedChoice.dataset["number"];
-
         //check if the answer is correct
 
         const classToApply = selectedAnswer == currentQuestion.answer ? "correct" : "incorrect";
