@@ -10,8 +10,9 @@ const finalScore = document.getElementById("finalScore");
 const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
 const highScoresList = document.getElementById("highScoresList");
 const resultDiv = document.getElementById("result");
-const highScoreContainer = document.getElementById("highScoreContainer")
+const highScoreContainer = document.getElementById("highScoreContainer");
 const clearHighScoresBtn = document.getElementById("clearScores");
+const hud = document.getElementById("hud");
 
 //constants
 const CORRECT_BONUS = 1;
@@ -168,8 +169,9 @@ getNewQuestion = () => {
         //save the score to local storage
         mostRecentScore = score;
         localStorage.setItem("mostRecentScore", mostRecentScore);
-        //hide the question container and display the result div
+        //hide the question container and hud to display the result div
         questionContainer.setAttribute("hidden", true);
+        hud.setAttribute("hidden", true);
         resultDiv.removeAttribute("hidden");
         //display the final score
         finalScore.innerText = score;
@@ -246,6 +248,7 @@ function startTimer(duration, display) {
             //hide the question container and display the result div
             questionContainer.setAttribute("hidden", true);
             resultDiv.removeAttribute("hidden");
+            hud.removeAttribute("hidden");
             return;
         }
     }, 1000); // update every second
@@ -267,6 +270,9 @@ window.onload = function () {
 username.addEventListener("keyup", () => {
     saveScore.disabled = !username.value;
     console.log(username.value);
+    if (!username.value) {
+        alert("Please enter your name to save your score!");
+    }
 });
 
 let saveHighScore = e => {
@@ -285,6 +291,7 @@ let saveHighScore = e => {
     localStorage.setItem("highScores", JSON.stringify(highScores));
     questionContainer.setAttribute("hidden", true);
     resultDiv.setAttribute("hidden", true);
+    hud.setAttribute("hidden", true);
     highScoreContainer.removeAttribute("hidden");
     // update high scores list by mapping through the high scores array creating a list item 
     highScoresList.innerHTML = highScores.map(score => {
