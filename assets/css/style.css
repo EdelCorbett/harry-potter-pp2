@@ -104,7 +104,6 @@ body {
 }
 
 .modal-header .title {
-    font-size: 1.5rem;
     font-weight: bold;
 }
 
@@ -163,6 +162,10 @@ body {
         width: 30rem;
     }
 
+    .title {
+        font-size: 1.5rem;
+    }
+
     .btn {
         width: 12rem;
     }
@@ -184,6 +187,20 @@ body {
         width: 25rem;
     }
 
+    .modal {
+        width: 500px;
+        height: 500px;
+    }
+
+    .modal-content {
+        padding: 30px 20px 20px 50px;
+        font-size: 1.2rem;
+    }
+
+    .title {
+        font-size: 1.2rem;
+    }
+
     .container {
         width: 400px;
     }
@@ -199,7 +216,7 @@ body {
 
 }
 
-
+/* media queries for smaller devices */
 @media (max-width: 500px) {
     body {
         background-size: 9rem, 8rem, cover;
@@ -210,8 +227,17 @@ body {
     }
 
     .modal {
-        width: 300px;
-        height: 300px;
+        width: 400px;
+        height: 400px;
+    }
+
+    .title {
+        font-size: 1.1rem;
+    }
+
+    .modal-content {
+        padding: 30px 20px 20px 30px;
+        font-size: 0.8rem;
     }
 
     .btn {
@@ -231,5 +257,43 @@ body {
     .result {
         width: 300px;
         font-size: 0.5rem;
+    }
+}
+
+/* media queries for mobile devices */
+@media (max-width: 400px) {
+    body {
+        background-size: 8rem, 7rem, cover;
+    }
+
+    .logo {
+        width: 12rem;
+    }
+
+    .modal {
+        width: 350px;
+        height: 350px;
+    }
+
+    .modal-content {
+        padding: 30px 20px 20px 30px;
+        font-size: 0.7rem;
+    }
+
+    .title {
+        font-size: 0.7rem;
+    }
+
+    .btn {
+        width: 7rem;
+    }
+
+    .game-header {
+        margin-bottom: 3rem;
+        font-size: .5rem;
+    }
+
+    .container {
+        width: 20rem;
     }
 }
