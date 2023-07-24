@@ -330,13 +330,27 @@ let saveHighScore = e => {
     }).join("");
 };
 
+const saveHighScoreMain = e => {
+    console.log("clicked the save button!");
+    e.preventDefault();
+    //check if emtpy
+    if (!username.value) {
+        setTimeout(() => {
+            alert("Please enter your name to save your score!");
+        }, 0);
+        return;
+    } else {
+        saveHighScore(e);
+    }
+};
+
 // event listener for save score button
 saveScore.addEventListener("click", saveHighScore);
 
 // clear high scores
 function clearHighScores() {
 
-    localStorage.removeItem("highScores");
+    localStorage.removeItem("high-scores");
     highScores.length = 0;
     highScoresList.innerHTML = "";
 }
