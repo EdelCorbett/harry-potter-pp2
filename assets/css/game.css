@@ -75,7 +75,7 @@ main {
 }
 
 /* hud */
-#hud {
+.hud {
     background-color: rgb(237, 198, 100, 0.9);
     display: flex;
     justify-content: space-between;
@@ -85,7 +85,7 @@ main {
     font-size: 1.2rem;
 }
 
-#hud-p {
+.hud-p {
     padding-top: 1rem;
     margin: 0;
     display: flex;
@@ -94,19 +94,19 @@ main {
 
 }
 
-#hud-q {
+.hud-q {
     display: flex;
     flex-direction: row;
     padding-top: 2rem;
 }
 
-#hud-s {
+.hud-s {
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 
-#hud-item {
+.hud-item {
     display: flex;
     align-items: center;
 }
@@ -133,7 +133,7 @@ main {
 
 }
 
-#result {
+.result {
     background-color: rgb(237, 198, 100, 0.9);
     display: flex;
     flex-direction: column;

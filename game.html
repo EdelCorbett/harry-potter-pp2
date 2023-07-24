@@ -16,28 +16,25 @@
 </head>
 
 <body>
-    <main clasa="game-main">
+    <main class="game-main">
         <div class="game-header">
             <h1 class="quiz-header">Harry Potter Quiz <br> Lets test your knoweledge</h1>
-
         </div>
         <div class="container">
             <!--heads up display-->
-            <div id="hud" hidden>
-                <div id="hud-q">
+            <div id="hud" class="hud hidden">
+                <div class="hud-q">
                     <p class="hud-p">
                         Question:
                     </p>
-                    <h2 class="hud-text" id="questionCounter">
-
+                    <h2 class="hud-text" id="question-counter">
                     </h2>
                 </div>
                 <div class="timeleft">
                     <div class="timer" id="timer">
-
                     </div>
                 </div>
-                <div id="hud-s">
+                <div class="hud-s">
                     <p class="hud-p">
                         Score :
                     </p>
@@ -46,7 +43,7 @@
                     </h2>
                 </div>
             </div>
-            <div id="questionContainer" class="question-container">
+            <div id="question-container" class="question-container">
                 <!--question display-->
                 <div class="question" id="question">Question</div>
                 <!--answer choices-->
@@ -59,25 +56,25 @@
             </div>
         </div>
         <!--this is the div that will display the high scores-->
-        <div id="result" hidden>
+        <div id="result" class="hidden result">
             <h1>You Scored</h1>
-            <h2 id="finalScore"></h2>
+            <h2 id="final-score"></h2>
             <form>
                 <input type="text" name="username" id="username" placeholder="Enter your name">
-                <button class="btn" id='saveScore' type="submit" disabled>Save</button>
+                <button class="btn" id='save-score' type="submit" disabled>Save</button>
             </form>
         </div>
         <!--this is the div that will display the high scores-->
-        <div class="high-score-container" id="highScoreContainer" hidden>
+        <div class="high-score-container" id="high-score-container" class="hidden">
             <div class="high-score-header">
                 <h2>High Scores</h2>
-                <ul id="highScoresList" class="high-score-list"></ul>
+                <ul id="high-scores-list" class="high-score-list"></ul>
             </div>
             <!--buttons to play again or go home-->
             <div class="btn-container">
-                <a href="game.html" class="btn" aria-label="Starts game again">Play Again</a>
+                <a href="game.html" id="play-again" class="btn" aria-label="Starts game again">Play Again</a>
                 <a href="index.html" class="btn" aria-label="returns to home page">Go Home</a>
-                <button class="btn" id="clearScores">Reset score</button>
+                <button class="btn" id="clear-scores">Reset score</button>
             </div>
         </div>
     </main>
