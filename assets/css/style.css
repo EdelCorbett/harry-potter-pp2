@@ -145,6 +145,17 @@ body {
     .logo {
         width: 30rem;
     }
+
+    .btn {
+        width: 12rem;
+    }
+
+    .result {
+        width: 500px;
+        font-size: 1rem;
+    }
+
+
 }
 
 @media (max-width: 768px) {
@@ -156,20 +167,49 @@ body {
         width: 25rem;
     }
 
+    .container {
+        width: 400px;
+    }
+
+    .btn {
+        width: 10rem;
+    }
+
+    .q .result {
+        width: 400px;
+        font-size: 0.8rem;
+    }
+
 }
+
 
 @media (max-width: 500px) {
     body {
-        background-size: 8rem, 6rem, cover;
+        background-size: 9rem, 8rem, cover;
     }
 
     .logo {
         width: 15rem;
     }
 
+    .modal {
+        width: 300px;
+        height: 300px;
+    }
+
     .btn {
         width: 8rem;
     }
+
+    .game-header {
+        margin-bottom: 3rem;
+        font-size: .5rem;
+    }
+
+    .container {
+        width: 20rem;
+    }
+
 
     .result {
         width: 300px;
