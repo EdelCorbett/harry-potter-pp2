@@ -4,38 +4,47 @@
     box-sizing: border-box;
 }
 
-
-
 body {
     display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+
+}
+
+main {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 10rem;
+    width: 100%;
 }
 
 .game-header {
+    background-color: rgb(237, 198, 100, 0.9);
     text-align: center;
     margin-top: 2rem;
+    margin-bottom: 7rem;
 }
 
-
 .container {
-
-    width: 35rem;
-    height: 25rem;
+    background-color: rgb(237. 198, 100, 0, 9);
+    padding: 1rem;
+    width: 40rem;
+    height: auto;
 
 }
 
 .question-container {
     text-align: center;
-    padding: 2rem;
+    padding: 0;
     height: 5rem;
-    font-size: 1.5rem;
+    font-size: 1rem;
 
 }
 
 .question {
-    background-color: yellow;
+    background-color: rgb(237, 198, 100, 0.9);
 }
 
 .answer-btn {
@@ -43,9 +52,16 @@ body {
     flex-direction: column;
     justify-content: center;
     padding: 2rem;
+    background-color: rgb(237, 198, 100, 0.9);
 }
 
 .choice-text {
+    background-color: rgb(237, 198, 100, 0.9);
+    margin: 0.2rem;
+    font-size: 1rem;
+    text-align: center;
+    border-radius: 5px;
+    border: solid 2px black;
     padding: 1rem;
 }
 
@@ -60,7 +76,7 @@ body {
 
 /* hud */
 #hud {
-    background-color: yellow;
+    background-color: rgb(237, 198, 100, 0.9);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -69,11 +85,68 @@ body {
     font-size: 1.2rem;
 }
 
+#hud-p {
+    padding-top: 1rem;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+
+#hud-q {
+    display: flex;
+    flex-direction: row;
+    padding-top: 2rem;
+}
+
+#hud-s {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
 #hud-item {
     display: flex;
     align-items: center;
 }
 
+/* high score container */
+.high-score-container {
+    background-color: rgb(237, 198, 100, 0.9);
+    display: flex;
+    justify-content: space-evenly;
+    padding: 1rem;
+    width: 500px;
+}
+
+.high-score-header {
+    padding: 1rem;
+    border: solid 2px black;
+}
+
+.btn-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 1rem;
+
+}
+
+#result {
+    background-color: rgb(237, 198, 100, 0.9);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+input {
+    background-color: rgb(237, 198, 100, 0.9);
+    color: black;
+
+
+}
 
 .hidden {
     display: none;
