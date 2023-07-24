@@ -26,11 +26,12 @@ body {
     align-items: center;
 }
 
+/*
 .heading {
     text-align: center;
     font-size: 2rem;
     margin: 20px 0;
-}
+}*/
 
 .timer {
     text-align: center;
@@ -67,6 +68,7 @@ body {
 /* modal style */
 .modal {
     position: fixed;
+    background-color: rgb(237, 198, 100, 0.9);
 
     top: 50%;
     left: 50%;
@@ -74,8 +76,8 @@ body {
     transition: 200ms ease-in-out;
     z-index: 10;
     background-size: cover;
-    width: 450px;
-    height: 500px;
+    width: 600px;
+    height: 600px;
 }
 
 /* modal active style */
@@ -113,8 +115,8 @@ body {
 
 /* modal content style */
 .modal-content {
-    padding: 20px 20px 20px 50px;
-    font-size: 1.2rem;
+    padding: 30px 20px 20px 50px;
+    font-size: 1.1rem;
 }
 
 /* overlay style */
