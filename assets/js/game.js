@@ -19,6 +19,7 @@ const hud = document.getElementById("hud");
 const CORRECT_BONUS = 1;
 const MAX_QUESTIONS = 10;
 const MAX_HIGH_SCORES = 5;
+const duration = 60;
 
 // let variables
 let startGame;
@@ -32,6 +33,8 @@ let questionCounter = 0;
 let availableQuestions = [];
 let timerInterval;
 let timeExpired = false;
+let timeLeft = duration;
+let correctAnswer = score / CORRECT_BONUS;
 
 //update the score
 finalScore.innerText = mostRecentScore;
@@ -179,7 +182,7 @@ playAgainBtn.addEventListener("click", startGame);
  *  if there are no questions left, or if timmer runs out
  */
 getNewQuestion = () => {
-    if (availableQuestions.length === 0 || questionCounter === MAX_QUESTIONS || timeExpired) {
+    if (availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS || timeExpired) {
         //save the score to local storage
         mostRecentScore = score;
         localStorage.setItem("mostRecentScore", mostRecentScore);
@@ -247,21 +250,21 @@ incrementScore = num => {
     scoreText.innerText = score;
 };
 
-//game countdown timer
+//game countdown timer 
 function startTimer(duration, display) {
     let timer = duration;
     // Update the timer every second
     const countdownInterval = setInterval(function () {
         display.textContent = timer;
         timer--;
-        // If the timer reaches 0, display this  message
+        // If the timer reaches 0, stop the timer and display game over
         if (timer <= 0 || timeExpired) {
             clearInterval(countdownInterval);
             display.textContent = ' Game Over!';
             let correctAnswer = score / CORRECT_BONUS;
-            let timeLeft = duration - timer;
-            let message = `You got ${correctAnswer} correct answers in ${timeLeft} seconds!`;
-            finalScore.innerText = message;
+            finalScore.innerText = correctAnswer;
+            timeExpired = true;
+
             //hide the question container and display the result div
             questionContainer.classList.add("hidden");
             resultDiv.classList.remove("hidden");
@@ -299,6 +302,7 @@ let saveHighScore = e => {
         score: mostRecentScore,
         name: username.value
     };
+
     /**
      * push the new score to the high scores array
      * sort the high scores array
@@ -326,9 +330,7 @@ const saveHighScoreMain = e => {
     e.preventDefault();
     //check if emtpy
     if (!username.value) {
-        setTimeout(() => {
-            alert("Please enter your name to save your score!");
-        }, 0);
+        alert("Please enter your name to save your score!");
         return;
     } else {
         saveHighScore(e);

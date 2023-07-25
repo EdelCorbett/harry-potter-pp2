@@ -38,11 +38,24 @@ This game is to be played for fun to test the players knowledge of Harry Potter.
 
 # Home Page
 * Home page has play game button when press open game page and starts game.
-* It also has a how to play button when pressed opens a modal with the instructions  
+---
+![home page](documentation/hp-game-images/home-page-image%2Cpng.png) 
 
-# How to Play
+## How to Play
+* Opens when how to play is pressed\*Contains instruction for game.
+---
+![How to play](documentation/hp-game-images/modal-image.png)
 
 # Game Page
+## On this page there is a heads up display which displays :
+* question counter 
+* Timer 
+* Score 
+## The game container displays ;
+* Random question
+* Four multiple choice questions
+* go home button 
+* Next button
 
 # Results 
 
