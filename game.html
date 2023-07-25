@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/game.css">
     <title>Harry Potter Quiz</title>
-    <title>Game</title>
 </head>
 
 <body>
@@ -28,7 +27,7 @@
                         Question:
                     </p>
                     <h2 class="hud-text" id="question-counter">
-                    </h2>
+                        0/10</h2>
                 </div>
                 <div class="timeleft">
                     <div class="timer" id="timer">
@@ -62,17 +61,17 @@
         <!--this is the div that will display the high scores-->
         <div id="result" class="hidden result">
             <h2>You Scored</h2>
-            <h3 id="final-score"></h3>
+            <h3 id="final-score">0</h3>
             <form>
                 <input type="text" name="username" id="username" placeholder="Enter your name">
                 <button class="btn" id="save-score" type="submit">Save</button>
             </form>
         </div>
         <!--this is the div that will display the high scores-->
-        <div class="high-score-container" id="high-score-container" class="hidden">
+        <div class="high-score-container hidden" id="high-score-container">
             <div class="high-score-header">
                 <h2>High Scores</h2>
-                <ul id="high-scores-list" class="high-score-list"></ul>
+                <ul id="high-scores-list" class="high-score-list">u</ul>
             </div>
             <!--buttons to play again or go home-->
             <div class="btn-container">
