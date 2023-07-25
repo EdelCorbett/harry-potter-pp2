@@ -21,6 +21,13 @@ main {
     padding: 50px;
 }
 
+/*play button*/
+.play-game-btn {
+    color: 000;
+    text-decoration: none;
+    font-weight: bold;
+}
+
 .game-header {
     background-color: rgb(237, 198, 100, 0.9);
     text-align: center;
@@ -63,6 +70,7 @@ main {
     border-radius: 5px;
     border: solid 2px black;
     padding: 1rem;
+    color: black;
 }
 
 /* correct or incorrect */
@@ -115,6 +123,17 @@ main {
     align-items: center;
 }
 
+
+/* timer style */
+.timer {
+    text-align: center;
+    font-size: 1.5rem;
+    border: solid 2px black;
+    border-radius: 50%;
+    padding: 1rem;
+}
+
+
 .question {
     font-family: poppins sans-serif;
     font-size: 1.3rem;
@@ -127,7 +146,8 @@ main {
     display: flex;
     justify-content: space-evenly;
     padding: 1rem;
-    width: 500px;
+    width: 400px;
+
 }
 
 .high-score-header {
@@ -150,6 +170,9 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 500px;
+    height: 400px;
+
 }
 
 #username {
