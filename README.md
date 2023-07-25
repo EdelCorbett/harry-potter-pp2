@@ -27,7 +27,8 @@ This game is to be played for fun to test the players knowledge of Harry Potter.
 
 # Features
 
-
+# Flow Chart
+![Flow Chart](documentation/harrypotter-flow-chart.jpg)
 # Wireframes
 
 ## [Home page](documentation/home%20page.png)
@@ -51,6 +52,9 @@ This game is to be played for fun to test the players knowledge of Harry Potter.
    - [Balsamiq](https://balsamiq.com/)
    - [GitHub](https://github.com/) 
    - [VS Code](https://code.visualstudio.com/)
+   - [Tinyjpg](https://tinyjpg.com/)
+   - [Miro](https://miro.com/)
+   - [Favicon](https://favicon.io/)
 
 
 # Design

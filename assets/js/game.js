@@ -195,7 +195,7 @@ getNewQuestion = () => {
     questionCounter++;
     //display the question counter
     questionCounterText.innerText = `${questionCounter}/${MAX_QUESTIONS}`;
-    //randomly select a question
+    //get a random question
     const questionIndex = Math.floor(Math.random() * availableQuestions.length);
     currentQuestion = availableQuestions[questionIndex];
     //display the question 
