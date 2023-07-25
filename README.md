@@ -31,12 +31,14 @@ This game is to be played for fun to test the players knowledge of Harry Potter.
 ![Flow Chart](documentation/harrypotter-flow-chart.jpg)
 # Wireframes
 
-## [Home page](documentation/home%20page.png)
-## [How to play](documentation/how%20to%20play.png)
-## [Game page](documentation/game%20page%20.png)
-## [Result page](documentation/result%20page.png)
+## [Home page](documentation/wire-frame-harry-potter/home-wire.png)
+## [How to play](documentation/wire-frame-harry-potter/rules-wire.png)
+## [Game page](documentation/wire-frame-harry-potter/game-wire.png)
+## [Result page](documentation/wire-frame-harry-potter/results-wire.png)
 
 # Home Page
+* Home page has play game button when press open game page and starts game.
+* It also has a how to play button when pressed opens a modal with the instructions  
 
 # How to Play
 
@@ -76,7 +78,7 @@ This game is to be played for fun to test the players knowledge of Harry Potter.
 # Manual Testing
 | Feature | Expect | Action | Result |Tested |
 |---|---|---|---|---|
-| Header ||||
+| play ||||
 
 
 # Bugs

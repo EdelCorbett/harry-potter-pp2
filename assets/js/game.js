@@ -255,7 +255,7 @@ function startTimer(duration, display) {
         display.textContent = timer;
         timer--;
         // If the timer reaches 0, display this  message
-        if (timer <= 0 || questionCounter === MAX_QUESTIONS || timeExpired) {
+        if (timer <= 0 || timeExpired) {
             clearInterval(countdownInterval);
             display.textContent = ' Game Over!';
             let correctAnswer = score / CORRECT_BONUS;
