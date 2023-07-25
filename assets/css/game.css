@@ -18,7 +18,6 @@ main {
     justify-content: center;
     align-items: center;
     width: 100%;
-
 }
 
 /*play button*/
@@ -49,10 +48,6 @@ main {
 
 }
 
-.question {
-    background-color: rgba(237, 198, 100, 0.9);
-}
-
 .answer-btn {
     display: flex;
     flex-direction: column;
@@ -68,7 +63,7 @@ main {
     text-align: center;
     border-radius: 5px;
     border: solid 2px black;
-    padding: 1rem;
+    padding: 0.5rem;
     color: black;
 }
 
@@ -143,8 +138,8 @@ main {
 
 
 .question {
+    background-color: rgba(237, 198, 100, 0.9);
     font-family: "Poppins", sans-serif;
-    font-size: 1.3rem;
     padding-top: 5px;
 }
 

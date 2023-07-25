@@ -208,6 +208,11 @@ body {
         width: 400px;
     }
 
+    .answer-btn {
+        font-size: 1rem;
+
+    }
+
     .btn {
         width: 10rem;
     }
@@ -300,6 +305,14 @@ body {
 
     .container {
         width: 300px !important;
+    }
+
+    .question {
+        font-size: 0.8rem;
+    }
+
+    .choice-text {
+        padding: 0.3rem;
     }
 
     .btn-container {
