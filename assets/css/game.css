@@ -51,7 +51,7 @@ main {
 }
 
 .question {
-    background-color: rgb(237, 198, 100, 0.9);
+    background-color: rgba(237, 198, 100, 0.9);
 }
 
 .answer-btn {
@@ -59,11 +59,11 @@ main {
     flex-direction: column;
     justify-content: center;
     padding: 2rem;
-    background-color: rgb(237, 198, 100, 0.9);
+    background-color: rgba(237, 198, 100, 0.9);
 }
 
 .choice-text {
-    background-color: rgb(237, 198, 100, 0.9);
+    background-color: rgba(237, 198, 100, 0.9);
     margin: 0.2rem;
     font-size: 1rem;
     text-align: center;
@@ -93,7 +93,7 @@ main {
 
 /* hud */
 .hud {
-    background-color: rgb(237, 198, 100, 0.9);
+    background-color: rgba(237, 198, 100, 0.9);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -144,7 +144,7 @@ main {
 
 
 .question {
-    font-family: poppins sans-serif;
+    font-family: "Poppins", sans-serif;
     font-size: 1.3rem;
     padding-top: 5px;
 }
@@ -164,6 +164,20 @@ main {
     border: solid 2px black;
 }
 
+.high-score-list {
+    list-style: none;
+    color: black;
+    font-family: "Poppins", sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+
+}
+
+li {
+    padding: 5px;
+
+}
+
 .btn-container {
     display: flex;
     flex-direction: column;
@@ -174,7 +188,7 @@ main {
 
 /* result container */
 .result {
-    background-color: rgb(237, 198, 100, 0.9);
+    background-color: rgba(237, 198, 100, 0.9);
     display: flex;
     flex-direction: column;
     justify-content: center;
