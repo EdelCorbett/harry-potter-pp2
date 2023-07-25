@@ -1,6 +1,5 @@
 const question = document.getElementById("question");
 const choices = Array.from(document.getElementsByClassName("choice-text"));
-console.log(choices);
 const questionCounterText = document.getElementById('question-counter');
 const questionContainer = document.getElementById('question-container');
 const nextBtn = document.getElementById('next-btn');
@@ -20,9 +19,11 @@ const hud = document.getElementById("hud");
 const CORRECT_BONUS = 1;
 const MAX_QUESTIONS = 10;
 const MAX_HIGH_SCORES = 5;
-const totalTime = 60;
 
 // let variables
+let startGame;
+let getNewQuestion;
+let incrementScore;
 let mostRecentScore = localStorage.getItem("mostRecentScore");
 let currentQuestion = {};
 let acceptingAnswers = false;
@@ -164,7 +165,6 @@ startGame = () => {
     questionCounter = 0;
     score = 0;
     availableQuestions = [...questions];
-    console.log(availableQuestions);
     getNewQuestion();
     highScoreContainer.classList.add("hidden");
     resultDiv.classList.add("hidden");
@@ -186,7 +186,7 @@ getNewQuestion = () => {
         //hide the question container and hud to display the result div
         questionContainer.classList.add("hidden");
         hud.classList.add("hidden");
-        resultDiv.classList.remove("hidden")
+        resultDiv.classList.remove("hidden");
         //display the final score
         finalScore.innerText = score;
         stopTimer();
@@ -203,12 +203,11 @@ getNewQuestion = () => {
     question.innerText = currentQuestion.question;
     //loop through the choices
     choices.forEach(choice => {
-        const number = choice.dataset["number"];
+        const number = choice.dataset.number;
         choice.innerText = currentQuestion["choice" + number];
     });
     //remove the question from the array
     availableQuestions.splice(questionIndex, 1);
-    console.log(availableQuestions);
     //set the accepting answers to true
     acceptingAnswers = true;
 };
@@ -219,10 +218,9 @@ choices.forEach(choice => {
         if (!acceptingAnswers) return;
         acceptingAnswers = false;
         const selectedChoice = e.target;
-        const selectedAnswer = selectedChoice.dataset["number"];
+        const selectedAnswer = selectedChoice.dataset.number;
         //check if the answer is correct
         const classToApply = selectedAnswer == currentQuestion.answer ? "correct" : "incorrect";
-        console.log(classToApply)
         //if the answer is correct, add 1 point to the score
         if (classToApply === "correct") {
             incrementScore(CORRECT_BONUS);
@@ -261,11 +259,8 @@ function startTimer(duration, display) {
             clearInterval(countdownInterval);
             display.textContent = ' Game Over!';
             let correctAnswer = score / CORRECT_BONUS;
-            console.log(correctAnswer);
             let timeLeft = duration - timer;
-            console.log(timeLeft);
             let message = `You got ${correctAnswer} correct answers in ${timeLeft} seconds!`;
-            console.log(message);
             finalScore.innerText = message;
             //hide the question container and display the result div
             questionContainer.classList.add("hidden");
@@ -287,10 +282,8 @@ function stopTimer() {
 window.onload = function () {
     const display = document.getElementById('timer');
     timerInterval = startTimer(60, display); // 60 seconds timer
-    startGame()
-
+    startGame();
 };
-
 
 /**
  * save the high score
@@ -299,10 +292,9 @@ window.onload = function () {
  * create a new score object
  */
 let saveHighScore = e => {
-    console.log("clicked the save button!");
     e.preventDefault();
     mostRecentScore = score;
-    localStorage.setItem("mostRecentScore", mostRecentScore)
+    localStorage.setItem("mostRecentScore", mostRecentScore);
     let newScore = {
         score: mostRecentScore,
         name: username.value
@@ -331,7 +323,6 @@ let saveHighScore = e => {
 };
 
 const saveHighScoreMain = e => {
-    console.log("clicked the save button!");
     e.preventDefault();
     //check if emtpy
     if (!username.value) {
@@ -344,8 +335,13 @@ const saveHighScoreMain = e => {
     }
 };
 // event listener for save score button
-saveScore.addEventListener("click", saveHighScoreMain)
-// clear high scores
+saveScore.addEventListener("click", saveHighScoreMain);
+
+/** 
+ * clear high scores
+ * remove the high scores from local storage
+ * clear the high scores array
+ */
 function clearHighScores() {
 
     localStorage.removeItem("high-scores");
