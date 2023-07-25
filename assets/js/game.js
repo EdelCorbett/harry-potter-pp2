@@ -3,6 +3,7 @@ const choices = Array.from(document.getElementsByClassName("choice-text"));
 console.log(choices);
 const questionCounterText = document.getElementById('question-counter');
 const questionContainer = document.getElementById('question-container');
+const nextBtn = document.getElementById('next-btn');
 const scoreText = document.getElementById('score');
 const username = document.getElementById("username");
 const saveScore = document.getElementById("save-score");
@@ -235,6 +236,13 @@ choices.forEach(choice => {
     });
 });
 
+function skipQuestion() {
+    if (!acceptingAnswers) return;
+    acceptingAnswers = false;
+    getNewQuestion();
+}
+nextBtn.addEventListener("click", skipQuestion);
+
 //increment score
 incrementScore = num => {
     score += num;
@@ -283,14 +291,6 @@ window.onload = function () {
 
 };
 
-/*event listener for the save score button
-username.addEventListener("keyup", () => {
-    saveScore.disabled = !username.value;
-    console.log(username.value);
-    if (!username.value) {
-        alert("Please enter your name to save your score!");
-    }
-});*/
 
 /**
  * save the high score
@@ -343,7 +343,7 @@ const saveHighScoreMain = e => {
         saveHighScore(e);
     }
 };
-
+// event listener for save score button
 saveScore.addEventListener("click", saveHighScoreMain)
 // clear high scores
 function clearHighScores() {
