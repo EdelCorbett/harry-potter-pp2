@@ -23,8 +23,8 @@ main {
 
 /*play button*/
 .play-game-btn {
-    color: 000;
-    text-decoration: none;
+    color: 000 !important;
+    text-decoration: none !important;
     font-weight: bold;
 }
 
@@ -45,7 +45,7 @@ main {
 .question-container {
     text-align: center;
     padding: 0;
-    height: 5rem;
+    height: 4rem;
     font-size: 1rem;
 
 }
@@ -80,6 +80,15 @@ main {
 
 .incorrect {
     background-color: red;
+}
+
+.navbtn {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
 }
 
 /* hud */

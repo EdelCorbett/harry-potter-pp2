@@ -59,6 +59,7 @@ body {
     text-align: center;
     font-size: 1rem;
     font-weight: bold;
+    font-family: poppins sans-serif;
     text-decoration: none;
     color: black
 }
@@ -66,6 +67,15 @@ body {
 .play {
     height: 5rem;
     margin: 0rem 0 2rem 0;
+
+}
+
+.play-game-btn {
+    color: black;
+    text-decoration: none;
+    font-family: poppins sans-serif;
+    font-weight: bold;
+    font-size: 1.5rem;
 }
 
 /* modal style */
@@ -97,6 +107,7 @@ body {
 
 .modal-header .title {
     font-weight: bold;
+    font-size: 2rem;
 }
 
 /* modal close button style */
@@ -186,7 +197,7 @@ body {
 
     .modal-content {
         padding: 30px 20px 20px 50px;
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
 
     .title {
@@ -275,7 +286,7 @@ body {
     }
 
     .title {
-        font-size: 0.7rem;
+        font-size: 1rem !important;
     }
 
     .btn {
