@@ -283,14 +283,14 @@ window.onload = function () {
 
 };
 
-//event listener for the save score button
+/*event listener for the save score button
 username.addEventListener("keyup", () => {
     saveScore.disabled = !username.value;
     console.log(username.value);
     if (!username.value) {
         alert("Please enter your name to save your score!");
     }
-});
+});*/
 
 /**
  * save the high score
@@ -344,9 +344,7 @@ const saveHighScoreMain = e => {
     }
 };
 
-// event listener for save score button
-saveScore.addEventListener("click", saveHighScore);
-
+saveScore.addEventListener("click", saveHighScoreMain)
 // clear high scores
 function clearHighScores() {
 
