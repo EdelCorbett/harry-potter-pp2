@@ -53,14 +53,16 @@
                     <button class="choice-text" data-number="3">choice 3</button>
                     <button class="choice-text" data-number="4">choice 4</button>
                 </div>
-                <button class="btn" id="next-btn">Next</button>
-                <a href="index.html" class="btn" aria-label="returns to home page">Go Home</a>
+                <div class="navbtn">
+                    <button class="btn" id="next-btn">Next</button>
+                    <a href="index.html" class="btn" aria-label="returns to home page">Go Home</a>
+                </div>
             </div>
         </div>
         <!--this is the div that will display the high scores-->
         <div id="result" class="hidden result">
-            <h1>You Scored</h1>
-            <h2 id="final-score"></h2>
+            <h2>You Scored</h2>
+            <h3 id="final-score"></h3>
             <form>
                 <input type="text" name="username" id="username" placeholder="Enter your name">
                 <button class="btn" id="save-score" type="submit">Save</button>
