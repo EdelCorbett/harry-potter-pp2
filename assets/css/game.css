@@ -30,7 +30,7 @@ main {
 .container {
     background-color: rgb(237. 198, 100, 0, 9);
     padding: 1rem;
-    width: 40rem;
+    width: 500px;
     height: auto;
 
 }
@@ -152,12 +152,16 @@ main {
     align-items: center;
 }
 
-input {
+#username {
     background-color: rgb(237, 198, 100, 0.9);
     color: black;
-
-
+    border: solid 2px black;
+    border-radius: 5px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    font-size: 1rem;
 }
+
 
 .hidden {
     display: none;
