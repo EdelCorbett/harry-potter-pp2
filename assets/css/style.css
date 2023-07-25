@@ -110,7 +110,7 @@ body {
 }
 
 /* close button hover style */
-.modal-header .close-btn:hover {
+.close-btn:hover {
     color: red;
 }
 
