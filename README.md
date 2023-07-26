@@ -1,5 +1,5 @@
 # Harry Potter Quiz Game
-A Quiz game to test knowledge on Harry Potter books and movies.
+A Quiz game to test knowledge of Harry Potter books and movies.
 ---
 ![Mockups](documentation/mock-up.png)
 # Contents
@@ -8,7 +8,7 @@ A Quiz game to test knowledge on Harry Potter books and movies.
 * [Flowchart](#flow)
 * [WIREFRAMES](#wireframes)
 * [HOME](#home-page-1)
-* [TECHNOLOGIES and LANUAGES USED](#Technologies)
+* [TECHNOLOGIES and LANGUAGES USED](#Technologies)
 * [DESIGN](#Design)
 * [TESTING](#Testing)
 * [BUGS](#Bugs)
@@ -18,15 +18,15 @@ A Quiz game to test knowledge on Harry Potter books and movies.
 
 ---
 # User stories
-This game is to be played for fun to test the players knowledge of Harry Potter. As Harry Potter's is loved and appreciated by people of various ages and backgrounds is game need to be enteraining and engaging to a wide variety of people.
+This game is to be played for fun to test the player"s knowledge of Harry Potter. As Harry Potter is loved and appreciated by people of various ages and backgrounds is game need to be entertaining and engaging to a wide variety of people.
 
 ## As a player 
-* To test the player knoweledge.
+* To test the player's knowledge.
 * Understand how to play.
 * Is easy to navigate.
 * Let the player know if they got the answer correct.
-* Let player beat their highest score.
-* Save player score on a leader board.
+* Let the player beat their highest score.
+* Save player score on a leaderboard.
 
 # Features
 
@@ -42,24 +42,24 @@ This game is to be played for fun to test the players knowledge of Harry Potter.
 ---
 
 # Home Page
-* Home page has play game button when press open game page and starts game.
+* Home page has a play game button when pressed opens game page and starts the game.
 ---
 ![home page](documentation/hp-game-images/home-page-image%2Cpng.png) 
 
 ## How to Play
 * Opens when how to play is pressed
-* Contains instruction for game.
+* Contains instructions for the game.
 
 ![How to play](documentation/hp-game-images/modal-image.png)
 
 # Game Page
-## On this page there is a heads up display which displays :
+## On this page there is a heads-up display which displays :
 * Question counter 
 * Timer 
 * Score 
 ## The game container displays ;
 * Random question
-* Four multiple choice questions
+* Four multiple-choice questions
 * go home button 
 * Next button
 ![Game page](documentation/hp-game-images/game-image.png)
@@ -67,14 +67,14 @@ This game is to be played for fun to test the players knowledge of Harry Potter.
 # Results 
 * Displays score 
 * Input to enter name 
-* Save buttonto save score 
+* Save button to save the score 
 * Alert message if name not entered  
 ![Results](documentation/hp-game-images/results-image.png)
 ---
 # High Score
 * Displays most recent score in a lists 
-* Play agin button
-* Go to home button
+* Play again button
+* Go home button
 * Reset scores button
 ![Highscore](documentation/hp-game-images/highscores-image.png)
 
@@ -132,18 +132,18 @@ This game is to be played for fun to test the players knowledge of Harry Potter.
 |---|---|---|---|---|
 |Play button |go to game page and start game|Press play button|Start game|Pass|
 |How to play button |Display instructions for game|Press play button|Display instructions|Pass|
-|Close Modal Button |Close insturctions|Click button or anywhere out side modal|Close Modal|Pass|
+|Close Modal Button |Close insturctions|Click button or anywhere outside modal|Close Modal|Pass|
 |Timer  |Starts onload|Press play button|Start timer |Pass|
 | play button |go to game page and start game|Press play button|Start game|Pass|
-|Question Counter|display how mant question answered|Selectan answer|question counter increasese|Pass|
+|Question Counter|display how many question answered|Selectan answer|question counter increasese|Pass|
 |Score |Increments with every correct answer|Click on the correct answer|Score increments by 1|Pass|
-|Color green to indicate answer is corrcet |Color green fills background of correct answer|Pick the correct answer|Green color indicates correct answer|Pass|
-|Color red to indicate answer is incorrcet |Color red fills background of incorrect answer|Pick the incorrect answer|Red color indicates incorrect answer|Pass|
-|Display ramdon Question from list |Different question no repeats|Press Play or Choose an answer|Ramdom question displayed|Pass|
+|Color green to indicate answer is correct |Color green fills background of correct answer|Pick the correct answer|Green color indicates correct answer|Pass|
+|Color red to indicate answer is incorrect |Color red fills background of incorrect answer|Pick the incorrect answer|Red color indicates incorrect answer|Pass|
+|Display random Question from list |Different question no repeats|Press Play or Choose an answer|Ramdom question displayed|Pass|
 |Result |Show results score |Play game|Start game|Pass|
 |Save Score|Save score and display it in highscores|Enter name and press save|Save score|Pass|
-|Alert message|Display alert to enter name to save score if input is empty|Press save when enter name input is empty|Display Alert|Pass|
-|High scores list||Save the top five score and display them inorder of highest score first|Save name|Pass|
+|Alert message|Display alert to enter a name to save score if input is empty|Press save when enter name input is empty|Display Alert|Pass|
+|High scores list||Save the top five scores and display them in order of highest score first|Save name|Pass|
 |Play again button |go to game page and start game again|Press play again button|Start game|Pass|
 |Go home button |go to Home page |Press go home button|back to home page|Pass|
 |Reset scores button|Clears high scores|Press reset score button|Reset high score list|Pass|
@@ -176,21 +176,26 @@ This game is to be played for fun to test the players knowledge of Harry Potter.
 # Bugs 
 ## High Scores would not updating 
 ### Description
-High score would not update when high score container displayed.
+The High score would not update when high score container displayed.
 ### Fixed 
 The issue was resolved by
 * Joining both the game.html and end.html together
 * Joining both the game.js and end.js together 
 * Changing the variable for mostRecentScores to let instead of const.
+## Alert message 
+### Description
+Alert message was not showing when no name was entered and save was pressed
+### Fixed 
+Deleted the event listener for username and added saveHighScoreMain function and event listener. The username event listener was only working on keyup but if there was nothing typed in input alert was not shown. The saveHighScoreMain function run when save is pressed.
 
 ### Warning 
 * This warning is showing on google chrome site 
-* It does not effect the game.
+* It does not affect the game.
 ![warning](documentation/warning.png)
 
 ---
 ## Mistakes
-* During the project I made a some commit message mistakes
+* During the project I made some commit message mistakes
 
 # Deployment
 * GitHub pages were used to deploy the site.
@@ -207,13 +212,13 @@ The issue was resolved by
 # Live Link [Harry Potter Quiz](https://edelcorbett.github.io/harry-potter-pp2/)
 
 # Future Features
-I would  incorporate different difficulty levels to the game.
+I would incorporate different difficulty levels into the game.
 
 ---
 
 
 # Credits 
-* [James Q Quick](https://www.youtube.com/watch?v=rFWbAj40JrQ&list=PLB6wlEeCDJ5Yyh6P2N6Q_9JijB6v4UejF)I use this youtube video for gudiance build game.
+* [James Q Quick](https://www.youtube.com/watch?v=rFWbAj40JrQ&list=PLB6wlEeCDJ5Yyh6P2N6Q_9JijB6v4UejF)I use this youtube video for guidance build game.
 * [Web Dev Simplified](https://www.youtube.com/watch?v=riDzcEQbX6k ) I also use this youtude video.
 * [Coolors](https://coolors.co/) was used to create the color palette.
 * [Slack Community](https://app.slack.com/) I use slack channels for guidance
@@ -223,13 +228,13 @@ I would  incorporate different difficulty levels to the game.
 * [Techsini](http://techsini.com/) was used for resposive mock-up.      
 
 * [pngwing](https://www.pngwing.com/) was used for background images.
-* [Google](https://www.google.com/) was used troughout project for reference.
-* [Chatgpt](https://chat.openai.com/) was use for quiz questions and reference.
+* [Google](https://www.google.com/) was used throughout the project for reference.
+* [Chatgpt](https://chat.openai.com/) was used for quiz questions and reference.
 ## Images
-* Background images was used from [pngwing](https://www.pngwing.com/) .
+* Background images were used from [pngwing](https://www.pngwing.com/).
 
 ## Acknowledgements
 I would like to acknowledge 
 * [Code Institute](https://codeinstitute.net/)
-* Juliia Konn My Mentor for her advice and support thought out the project. 
+* Juliia Konn My Mentor for her advice and support throughtout the project. 
 * Madison Corbett for help creating questions and testing.
