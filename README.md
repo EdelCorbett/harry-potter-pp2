@@ -135,6 +135,8 @@ This game is to be played for fun to test the players knowledge of Harry Potter.
 | play button |go to game page and start game|Press play button|Start game|Pass|
 |Question Counter|display how mant question answered|Selectan answer|question counter increasese|Pass|
 |Score |Increments with every correct answer|Click on the correct answer|Score increments by 1|Pass|
+|Color green to indicate answer is corrcet |Color green fills background of correct answer|Pick the correct answer|Green color indicates correct answer|Pass|
+|Color red to indicate answer is incorrcet |Color red fills background of incorrect answer|Pick the incorrect answer|Red color indicates incorrect answer|Pass|
 |Display ramdon Question from list |Different question no repeats|Press Play or Choose an answer|Ramdom question displayed|Pass|
 |Result |Show results score |Play game|Start game|Pass|
 |Save Score|Save score and display it in highscores|Enter name and press save|Save score|Pass|
