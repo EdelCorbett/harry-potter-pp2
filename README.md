@@ -78,9 +78,10 @@ This game is to be played for fun to test the player"s knowledge of Harry Potter
 * Reset scores button
 ![Highscore](documentation/hp-game-images/highscores-image.png)
 
-# Technologies & Lanuages
+# Technologies & Languages
   - [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) 
    - [CSS](https://developer.mozilla.org/en-US/docs/Web/css)
+   - [Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
    - [CSS Flexbox](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox) 
    - [CSS Grid](https://developer.mozilla.org/en-US/docs/Web/CSS/grid)
    - [Balsamiq](https://balsamiq.com/)
