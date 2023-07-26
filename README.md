@@ -1,8 +1,11 @@
 # Harry Potter Quiz Game
 A Quiz game to test knowledge on Harry potter books and movies.
+---
+![Mockups](documentation/mock-up.png)
 # Contents
 * [USER STORIES](#USER)
 * [FEATURES](#features)
+* [Flowchart](#flow)
 * [WIREFRAMES](#wireframes)
 * [Home](#home-page-1)
 * [TECHNOLOGIES and LANUAGES USED](#Technologies)
@@ -28,13 +31,15 @@ This game is to be played for fun to test the players knowledge of Harry Potter.
 # Features
 
 # Flow Chart
-![Flow Chart](documentation/harrypotter-flow-chart.jpg)
+![Flowchart](documentation/harrypotter-flow-chart.jpg)
+---
 # Wireframes
 
 ## [Home page](documentation/wire-frame-harry-potter/home-wire.png)
 ## [How to play](documentation/wire-frame-harry-potter/rules-wire.png)
 ## [Game page](documentation/wire-frame-harry-potter/game-wire.png)
 ## [Result page](documentation/wire-frame-harry-potter/results-wire.png)
+---
 
 # Home Page
 * Home page has play game button when press open game page and starts game.
@@ -42,8 +47,9 @@ This game is to be played for fun to test the players knowledge of Harry Potter.
 ![home page](documentation/hp-game-images/home-page-image%2Cpng.png) 
 
 ## How to Play
-* Opens when how to play is pressed\*Contains instruction for game.
----
+* Opens when how to play is pressed
+* Contains instruction for game.
+
 ![How to play](documentation/hp-game-images/modal-image.png)
 
 # Game Page
@@ -56,8 +62,21 @@ This game is to be played for fun to test the players knowledge of Harry Potter.
 * Four multiple choice questions
 * go home button 
 * Next button
+![Game page](documentation/hp-game-images/game-image.png)
 
 # Results 
+* Displays score 
+* Input to enter name 
+* Save buttonto save score 
+* Alert message if name not entered  
+![Results](documentation/hp-game-images/results-image.png)
+---
+# High Score
+* Displays most recent score in a lists 
+* Play agin button
+* Go to home button
+* Reset scores button
+![Highscore](documentation/hp-game-images/highscores-image.png)
 
 # Technologies & Lanuages
   - [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) 
@@ -73,6 +92,17 @@ This game is to be played for fun to test the players knowledge of Harry Potter.
 
 
 # Design
+## logo
+* Is image from [pngwing](https://www.pngwing.com/)
+![logo](assets/images/logo.png)
+---
+## Favicon
+* Created on [Favicon](https://favicon.io/)
+
+![Favion](assets/favicon_io/favicon.ico)
+
+---
+
 
 ## Fonts
 
@@ -82,7 +112,10 @@ This game is to be played for fun to test the players knowledge of Harry Potter.
 ### Poppins was used to Questions
 ![Poppins](documentation/poppins.png)
 
-## Color Palette
+---
+## Color Palette 
+* Color Palette was chosen from the color on the background image.
+---
 
 ![color palette](documentation/colorpalette.png) 
 
@@ -91,7 +124,9 @@ This game is to be played for fun to test the players knowledge of Harry Potter.
 # Manual Testing
 | Feature | Expect | Action | Result |Tested |
 |---|---|---|---|---|
-| play ||||
+|Play button |go to game page and start game|Press play button|Start game|Pass|
+|How to play button |Display instructions for game|Press play button|Display instructions|Pass|
+| play button |go to game page and start game|Press play button|Start game|Pass|
 
 
 # Bugs
