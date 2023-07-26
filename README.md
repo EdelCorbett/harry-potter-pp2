@@ -126,18 +126,36 @@ This game is to be played for fun to test the players knowledge of Harry Potter.
 |---|---|---|---|---|
 |Play button |go to game page and start game|Press play button|Start game|Pass|
 |How to play button |Display instructions for game|Press play button|Display instructions|Pass|
+|Close Modal Button |Close insturctions|Click button or anywhere out side modal|Close Modal|Pass|
+|Timer  |Starts onload|Press play button|Start timer |Pass|
 | play button |go to game page and start game|Press play button|Start game|Pass|
+|Question Counter|display how mant question answered|Selectan answer|question counter increasese|Pass|
+|Score |Increments with every correct answer|Click on the correct answer|Score increments by 1|Pass|
+|Display ramdon Question from list |Different question no repeats|Press Play or Choose an answer|Ramdom question displayed|Pass|
+|Result |Show results score |Play game|Start game|Pass|
+|Save Score|Save score and display it in highscores|Enter name and press save|Save score|Pass|
+|Alert message|Display alert to enter name to save score if input is empty|Press save when enter name input is empty|Display Alert|Pass|
+|High scores list||Save the top five score and display them inorder of highest score first|Save name|Pass|
+|Play again button |go to game page and start game again|Press play again button|Start game|Pass|
+|Go home button |go to Home page |Press go home button|back to home page|Pass|
+|Reset scores button|Clears high scores|Press reset score button|Reset high score list|Pass|
 
+---
 
-# Bugs
+# Bugs 
 ## High Scores would not updating 
 ### Description
-High sore would not update when high score container displayed.
+High score would not update when high score container displayed.
 ### Fixed 
-the issue was resolved by
-* joining both the game.html and end.html together
-* joining both the game.js and end.js together 
+The issue was resolved by
+* Joining both the game.html and end.html together
+* Joining both the game.js and end.js together 
 * Changing the variable for mostRecentScores to let instead of const.
+
+### Warning 
+* This warning is showing on google chrome site 
+* It does not effect the game.
+![warning](documentation/warning.png)
 
 # Deployment
 * GitHub pages were used to deploy the site.
