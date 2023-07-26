@@ -22,19 +22,19 @@ main {
 
 /*play button*/
 .play-game-btn {
-    color: 000 !important;
+    color: #000;
     text-decoration: none !important;
     font-weight: bold;
 }
 
 .game-header {
-    background-color: rgb(237, 198, 100, 0.9);
+    background-color: rgba(237, 198, 100, 0.9);
     text-align: center;
     margin-top: 2rem;
 }
 
 .container {
-    background-color: rgb(237. 198, 100, 0, 9);
+    background-color: rgba(237. 198, 100, 0, 9);
     padding: 1rem;
     width: 500px;
     height: auto
