@@ -19,7 +19,7 @@ const hud = document.getElementById("hud");
 const CORRECT_BONUS = 1;
 const MAX_QUESTIONS = 10;
 const MAX_HIGH_SCORES = 5;
-const duration = 60;
+
 
 // let variables
 let startGame;
@@ -33,8 +33,6 @@ let questionCounter = 0;
 let availableQuestions = [];
 let timerInterval;
 let timeExpired = false;
-let timeLeft = duration;
-let correctAnswer = score / CORRECT_BONUS;
 
 //update the score
 finalScore.innerText = mostRecentScore;
