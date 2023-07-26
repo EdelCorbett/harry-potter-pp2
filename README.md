@@ -1,5 +1,5 @@
 # Harry Potter Quiz Game
-A Quiz game to test knowledge on Harry potter books and movies.
+A Quiz game to test knowledge on Harry Potter books and movies.
 ---
 ![Mockups](documentation/mock-up.png)
 # Contents
@@ -125,6 +125,8 @@ This game is to be played for fun to test the players knowledge of Harry Potter.
 * I have tested the site on different screen sizes to confirm it is responsive.
 * I have tested all links to confirm they are functioning.
 
+----
+
 # Manual Testing
 | Feature | Expect | Action | Result |Tested |
 |---|---|---|---|---|
@@ -150,6 +152,7 @@ This game is to be played for fun to test the players knowledge of Harry Potter.
 ## Validator Testing
 ### [W3C](https://validator.w3.org/) was used for validation of Html
 
+
 # Bugs 
 ## High Scores would not updating 
 ### Description
@@ -165,6 +168,10 @@ The issue was resolved by
 * It does not effect the game.
 ![warning](documentation/warning.png)
 
+---
+## Mistakes
+* During the project I made a some commit message mistakes
+
 # Deployment
 * GitHub pages were used to deploy the site.
 * This was done by: 
@@ -179,4 +186,29 @@ The issue was resolved by
 
 # Live Link [Harry Potter Quiz](https://edelcorbett.github.io/harry-potter-pp2/)
 
+# Future Features
+I would  incorporate different difficulty levels to the game.
+
+---
+
+
 # Credits 
+* [James Q Quick](https://www.youtube.com/watch?v=rFWbAj40JrQ&list=PLB6wlEeCDJ5Yyh6P2N6Q_9JijB6v4UejF)I use this youtube video for gudiance build game.
+* [Web Dev Simplified](https://www.youtube.com/watch?v=riDzcEQbX6k ) I also use this youtude video.
+* [Coolors](https://coolors.co/) was used to create the color palette.
+* [Slack Community](https://app.slack.com/) I use slack channels for guidance
+* [CSS TRICKS](https://css-tricks.com/)
+* [Stack overflow](https://stackoverflow.com/) for information.
+* [W3Schools](https://www.w3schools.com/) was used as reference
+* [Techsini](http://techsini.com/) was used for resposive mock-up.      
+
+* [pngwing](https://www.pngwing.com/) was used for background images.
+
+## Images
+* Background image was used from [pngwing](https://www.pngwing.com/) .
+
+## Acknowledgements
+I would like to acknowledge 
+* [Code Institute](https://codeinstitute.net/)
+*  
+* Juliia Konn My Mentor for her advice and support thought out the project. 
