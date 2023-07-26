@@ -7,7 +7,7 @@ A Quiz game to test knowledge on Harry Potter books and movies.
 * [FEATURES](#features)
 * [Flowchart](#flow)
 * [WIREFRAMES](#wireframes)
-* [Home](#home-page-1)
+* [HOME](#home-page-1)
 * [TECHNOLOGIES and LANUAGES USED](#Technologies)
 * [DESIGN](#Design)
 * [TESTING](#Testing)
@@ -151,6 +151,26 @@ This game is to be played for fun to test the players knowledge of Harry Potter.
 ---
 ## Validator Testing
 ### [W3C](https://validator.w3.org/) was used for validation of Html
+* [Home page](documentation/testing-images/htmlcheck-home.png)
+* [Game Page](documentation/testing-images/Htmlcheck.game.png)
+
+ ### [Jigsaw](https://jigsaw.w3.org/css-validator/) was used for validation of CSS
+ * [Home page](documentation/testing-images/css-validator-home.png)
+ * [Game Page](documentation/testing-images/css-validator-game.png)
+
+ ### [Jshint](https://jshint.com/) was used for validation of Javascript
+ * [Home page](documentation/testing-images/jshint-home.png)
+ * [Game Page](documentation/testing-images/jshint-game.png)
+
+ ---
+ ## Lighthouse Testing
+### DESKTOP
+* [Home page](documentation/testing-images/lighthouse-home-d.png)
+* [Game page](documentation/testing-images/lighthouse-game-d.png)
+
+### MOBILE
+* [Home page](documentation/testing-images/lighthouse-home-m.png)
+* [Game page](documentation/testing-images/lighthouse-game-m.png)
 
 
 # Bugs 
@@ -203,12 +223,13 @@ I would  incorporate different difficulty levels to the game.
 * [Techsini](http://techsini.com/) was used for resposive mock-up.      
 
 * [pngwing](https://www.pngwing.com/) was used for background images.
-
+* [Google](https://www.google.com/) was used troughout project for reference.
+* [Chatgpt](https://chat.openai.com/) was use for quiz questions and reference.
 ## Images
-* Background image was used from [pngwing](https://www.pngwing.com/) .
+* Background images was used from [pngwing](https://www.pngwing.com/) .
 
 ## Acknowledgements
 I would like to acknowledge 
 * [Code Institute](https://codeinstitute.net/)
-*  
 * Juliia Konn My Mentor for her advice and support thought out the project. 
+* Madison Corbett for help creating questions and testing.
