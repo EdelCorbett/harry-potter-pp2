@@ -54,7 +54,7 @@ This game is to be played for fun to test the players knowledge of Harry Potter.
 
 # Game Page
 ## On this page there is a heads up display which displays :
-* question counter 
+* Question counter 
 * Timer 
 * Score 
 ## The game container displays ;
@@ -109,7 +109,7 @@ This game is to be played for fun to test the players knowledge of Harry Potter.
 ### Henny Penny was used for headings 
 ![Henny Penny](documentation/henny-penny.png)
 
-### Poppins was used to Questions
+### Poppins was used to Question
 ![Poppins](documentation/poppins.png)
 
 ---
@@ -120,6 +120,10 @@ This game is to be played for fun to test the players knowledge of Harry Potter.
 ![color palette](documentation/colorpalette.png) 
 
 # Testing
+
+* I have tested the site  on Chrome, Safari and Firefox
+* I have tested the site on different screen sizes to confirm it is responsive.
+* I have tested all links to confirm they are functioning.
 
 # Manual Testing
 | Feature | Expect | Action | Result |Tested |
@@ -141,6 +145,8 @@ This game is to be played for fun to test the players knowledge of Harry Potter.
 |Reset scores button|Clears high scores|Press reset score button|Reset high score list|Pass|
 
 ---
+## Validator Testing
+### [W3C](https://validator.w3.org/) was used for validation of Html
 
 # Bugs 
 ## High Scores would not updating 
